@@ -59,7 +59,7 @@ git checkout -b TuNombre
 Ejemplo:
 
 ```bash
-git checkout -b MariaGomez
+git checkout -b Blas Mardones
 ```
 
 ---
