@@ -1,19 +1,19 @@
 ````markdown
 # 📘 Programación Avanzada 2025 - Repositorio de trabajos y talleres
 
-Este repositorio fue creado con el objetivo de centralizar todos los trabajos, tareas y talleres de la materia **Programación Avanzada**. Cada estudiante tendrá su propia rama de trabajo donde podrá subir sus entregas de manera organizada y sin pisar el trabajo de los demás.
+Este repositorio fue creado para centralizar todos los trabajos, tareas y talleres de la materia **Programación Avanzada**. Cada estudiante tendrá su propia rama para subir sus entregas de manera organizada, evitando conflictos y pisar el trabajo de otros compañeros.
 
 ---
 
 ## 🧰 ¿Qué necesito para empezar?
 
-Antes de usar este repositorio, asegurate de tener instalado:
+Antes de comenzar, asegúrate de tener instalado:
 
 - Git
 - Una cuenta en GitHub
 - Un editor de código (por ejemplo, VS Code)
 
-Podés trabajar desde cualquier sistema operativo, ya sea Windows, Linux o macOS.
+Podés usar cualquier sistema operativo: Windows, Linux o macOS.
 
 ---
 
@@ -21,21 +21,21 @@ Podés trabajar desde cualquier sistema operativo, ya sea Windows, Linux o macOS
 
 ### 1. Cloná el repositorio
 
-Tenés dos formas de hacerlo:
+Podés clonar el repositorio usando dos métodos:
 
-#### Opción 1: Con SSH (si ya lo tenés configurado)
+#### Opción 1: Con SSH (requiere tener configuradas las claves SSH)
 
 ```bash
 git clone git@github.com:SubaruDev0/ProgramacionAvanzada2025.git
 ````
 
-#### Opción 2: Con HTTPS (más simple si no configuraste claves)
+#### Opción 2: Con HTTPS (más simple si no configuraste claves SSH)
 
 ```bash
 git clone https://github.com/SubaruDev0/ProgramacionAvanzada2025.git
 ```
 
-Después entrás a la carpeta del proyecto:
+Luego, ingresá a la carpeta del proyecto:
 
 ```bash
 cd ProgramacionAvanzada2025
@@ -45,7 +45,7 @@ cd ProgramacionAvanzada2025
 
 ### 2. Creá tu rama personal
 
-Cada estudiante debe tener su propia rama para trabajar. Usá tu nombre para que sea fácil de identificar.
+Cada estudiante debe trabajar en su propia rama para mantener todo organizado. Creá tu rama usando tu nombre o alias:
 
 ```bash
 git checkout -b TuNombre
@@ -59,21 +59,21 @@ git checkout -b AgustinLopez
 
 ---
 
-### 3. Creá una carpeta para la actividad
+### 3. Creá una carpeta para cada actividad
 
-Dentro de tu rama, creá una carpeta con el nombre de la tarea, taller o trabajo. Ahí va todo lo relacionado a esa actividad.
+Dentro de tu rama, creá una carpeta con el nombre de la tarea, taller o trabajo que vas a entregar. Ahí debes guardar todos los archivos relacionados.
 
 ```bash
 mkdir Taller1
 ```
 
-Guardá adentro tus archivos: código, capturas, PDFs, etc.
+Guardá en esa carpeta los archivos que correspondan: código, imágenes, documentos, etc.
 
 ---
 
 ### 4. Guardá y subí tus cambios
 
-Una vez que tengas todo listo:
+Cuando tengas todo listo, añadí los archivos, realizá un commit y subí tu rama al repositorio remoto:
 
 ```bash
 git add .
@@ -81,22 +81,22 @@ git commit -m "Subo Taller 1"
 git push -u origin TuNombre
 ```
 
-> Asegurate de que estás en tu rama antes de hacer `push`.
+> Asegurate de estar en tu rama antes de hacer el `push`.
 
 ---
 
-### 5. Revisá en GitHub
+### 5. Revisá tus archivos en GitHub
 
-Podés ver tu rama en la página del repositorio. Ahí podés revisar tus archivos o hacer un **Pull Request** si querés integrar algo a otra rama (como a `main` o `Subaru`, según indique el grupo o el profe).
+Podés ingresar a la página del repositorio en GitHub para revisar tu rama y tus archivos. También podés abrir un **Pull Request** si querés integrar tus cambios a otra rama, como `main`.
 
 ---
 
 ## ✅ Reglas y organización
 
-* **Una rama por persona**. No trabajes en la rama de otro.
-* **Una carpeta por actividad**. Ejemplo: `Taller2/`, `TP_Final/`, etc.
+* **Una rama por persona**: trabajá solo en tu rama personal.
+* **Una carpeta por actividad**: nombrá cada carpeta con la tarea o taller correspondiente.
 * **No modifiques archivos de otros compañeros.**
-* Usá nombres claros en los commits, por ejemplo:
+* Usá mensajes claros y descriptivos en los commits. Por ejemplo:
 
   * `"Subo Taller 2 con HTML y CSS"`
   * `"Agrego solución al ejercicio de clases en Java"`
@@ -115,38 +115,35 @@ ProgramacionAvanzada2025/
 ├── README.md
 ```
 
-Podés usar cualquier tipo de archivo según lo que te pidan: `.java`, `.html`, `.css`, `.js`, `.pdf`, etc.
+Podés usar cualquier tipo de archivo necesario para la entrega: `.java`, `.html`, `.css`, `.js`, `.pdf`, etc.
 
 ---
 
-## 🙋‍♂️ ¿Dudas?
+## 🙋‍♂️ ¿Tenés dudas?
 
-Consultá con quien esté coordinando el repositorio en el grupo o preguntale a algún compañero que ya haya hecho el proceso. Lo importante es que todos podamos trabajar bien y sin romper nada 😅
+Consultá con la persona que coordina el repositorio en el grupo o preguntale a un compañero que ya haya subido trabajos. Lo importante es que todos podamos colaborar sin problemas ni conflictos.
 
 ---
 
-¡A meterle KBROS! 🔥💻
+¡A darle con todo, equipo! 🔥💻
 
 ````
 
 ---
 
-### ✅ Listo para subir
-
-Si querés, te dejo los comandos para agregar este README al repo:
+### Si querés, te paso los comandos para subir este README desde tu rama personal:
 
 ```bash
-# Asegurate de estar en tu rama (por ejemplo, Subaru)
+# Cambiá a tu rama personal (por ejemplo, Subaru)
 git checkout Subaru
 
-# Crear el archivo
+# Crear o editar el README.md
 nano README.md
-# (Pega ahí todo el contenido, guardá con CTRL + O y salí con CTRL + X)
+# (Pegá el contenido, guardá con CTRL + O, luego salí con CTRL + X)
 
-# Subirlo
+# Agregar y subir los cambios
 git add README.md
-git commit -m "docs: Agrega README con guía de uso colaborativo"
+git commit -m "docs: Agrega README con guía para colaborar en el repositorio"
 git push origin Subaru
 ````
-
 
