@@ -1,5 +1,3 @@
-### 📄 Acá va el `README.md` final, listo para copiar y usar:
-
 ````markdown
 # 📘 Programación Avanzada 2025 - Repositorio de trabajos y talleres
 
