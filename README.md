@@ -1,4 +1,4 @@
-````markdown
+
 # 📚 Programación Avanzada 2025 - Repositorio de entregas
 
 Bienvenido al repositorio oficial de **Programación Avanzada 2025**.  
@@ -32,7 +32,7 @@ Puedes clonar este repositorio de dos maneras:
 
   ```bash
   git clone git@github.com:SubaruDev0/ProgramacionAvanzada2025.git
-````
+
 
 * **HTTPS** (más simple si no configuraste claves):
 
