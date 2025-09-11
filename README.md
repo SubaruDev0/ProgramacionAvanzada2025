@@ -9,6 +9,26 @@ El objetivo es mantener una estructura clara, ordenada y fácil de mantener.
 
 ---
 
+## 📑 Índice
+- [⚙️ Requisitos previos](#️-requisitos-previos)
+- [🚀 ¿Cómo subir tus trabajos?](#-cómo-subir-tus-trabajos)
+  - [1. Clonar el repositorio](#1-clonar-el-repositorio)
+  - [2. Crear una rama con tu nombre](#2-crear-una-rama-con-tu-nombre)
+  - [3. Crear una carpeta para la actividad](#3-crear-una-carpeta-para-la-actividad)
+  - [4. Guardar y subir tus cambios](#4-guardar-y-subir-tus-cambios)
+  - [5. Verifica tu rama en GitHub](#5-verifica-tu-rama-en-github)
+- [🧭 Reglas de trabajo](#-reglas-de-trabajo)
+- [📁 Estructura sugerida](#-estructura-sugerida)
+- [🍥 Flujo de trabajo de git](#-flujo-de-trabajo-de-git)
+  - [Clonado](#clonado)
+  - [Cambios Locales](#cambios-locales)
+  - [Stage](#stage)
+  - [Commit](#commit)
+  - [Server](#server)
+- [❓ Dudas o consultas](#-dudas-o-consultas)
+
+---
+
 ## ⚙️ Requisitos previos
 
 Antes de comenzar, asegúrate de tener lo siguiente:
@@ -131,6 +151,34 @@ ProgramacionAvanzada2025/
 Se permiten archivos en cualquier formato necesario para la entrega: `.java`, `.html`, `.css`, `.js`, `.pdf`, entre otros.
 
 ---
+
+## 🍥 Flujo de tarbajo de git.
+
+* ### **Clonado**
+  La primera etapa, y la más fundamental, es la de clonar el proyecto. Una vez que el proyecto está clonado, se puede trabajar con él. (Para más detalles, revisar el apartado "Clonado con GitHub Desktop" en la sección "Cómo usar Git (GitHub Desktop)").
+
+* ### **Cambios Locales**
+  En esta etapa, se realizan los cambios al proyecto en la máquina local donde se clonó. Sin embargo, estos cambios no serán registrados en Git a menos que se sigan una serie de pasos importantes para que Git pueda rastrear y registrar los cambios realizados.
+
+  Para que Git siga el proceso, es necesario pasar los archivos cambiados y/o agregados a la etapa de stage mediante el comando `add`.
+
+* ### **Stage**
+  En la etapa de stage, los cambios realizados en el proyecto se introducen mediante el add. Una vez que los cambios están en la etapa de stage, pueden pasar a la etapa de commit.
+
+  En esta etapa, aunque se pueden seguir haciendo cambios en el proyecto, estos no estarán oficialmente registrados en Git hasta que lleguen a la etapa de *commit*.
+
+* ### **Commit**
+  Con los cambios guardados en la etapa de stage, se procede a la etapa de commit.
+
+  En esta etapa, los cambios guardados en stage se registran junto con una descripción. Esta descripción, denominada commit, es fundamental para que los colaboradores entiendan qué cambios importantes se realizaron en el proyecto. (Para más detalles, revisar el apartado "Buenas prácticas de Git").
+
+  Es importante asegurarse de que los archivos relevantes al cambio que se va a registrar estén en el stage antes de realizar el commit. Esto garantiza que el commit sea coherente con el progreso del proyecto. (Para más información, revisar la sección "Buenas prácticas en Git").
+
+* ### **Server**
+  Finalmente, en la etapa de servidor, se establece la comunicación con el servicio que almacenará el proyecto (GitHub, en este caso).
+
+  El contenido que se sube al servidor es el que se encuentra en la etapa de commit. Por esta razón, es crucial pasar los cambios del stage a un commit antes de intentar subirlos al servidor.
+
 
 ## ❓ Dudas o consultas
 
