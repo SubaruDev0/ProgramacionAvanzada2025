@@ -78,19 +78,20 @@ Dentro de esa carpeta debes guardar todos los archivos relacionados: código, im
 
 Una vez que tengas tus archivos y/o cambios listos, tendras que subirlos:
 
-> Para agregar contenido al Stage ('.' es para aplicar todos los cambios, pero se puede hacer en un archivo especifico).
+> Para agregar contenido al Stage ("." es para aplicar todos los cambios, pero se puede hacer en un archivo especifico).
 ```bash
 git add .
 git add ejemplo.txt
 ```
 
-> Para commitear los cambios que subiste al Stage.
+> Para commitear ("comentar") los cambios que subiste al Stage.
 ```bash
 git commit -m "Subo Taller 1"
 ```
 
 > Asegúrate de estar en tu rama antes de hacer `push`.
-> Hace push al repositorio remoto (-u se usa cuando es una nueva rama).
+
+> Sube los commits al repositorio remoto (-u se usa cuando es una nueva rama).
 ```bash
 git push -u origin NombreRama
 git push origin NombreRama
