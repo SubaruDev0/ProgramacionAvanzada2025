@@ -28,17 +28,15 @@ Compatible con Windows, Linux y macOS.
 
 Puedes clonar este repositorio de dos maneras:
 
-- **SSH** (si ya configuraste tus claves SSH):
-
-  ```bash
-  git clone git@github.com:SubaruDev0/ProgramacionAvanzada2025.git
-
-
 * **HTTPS** (más simple si no configuraste claves):
 
   ```bash
   git clone https://github.com/SubaruDev0/ProgramacionAvanzada2025.git
-  ```
+  
+- **SSH** (si ya configuraste tus claves SSH):
+
+  ```bash
+  git clone git@github.com:SubaruDev0/ProgramacionAvanzada2025.git  ```
 
 Luego entra a la carpeta del proyecto:
 
@@ -50,7 +48,7 @@ cd ProgramacionAvanzada2025
 
 ### 2. Crear una rama con tu nombre
 
-Cada estudiante debe tener su propia rama. Crea la tuya con:
+Cada estudiante debe tener su propia rama. Crea la tuya ejecutando el siguiente comando:
 
 ```bash
 git checkout -b TuNombre
@@ -66,7 +64,7 @@ git checkout -b Blas Mardones
 
 ### 3. Crear una carpeta para la actividad
 
-En tu rama, crea una carpeta con el nombre de la tarea o taller que vas a entregar:
+En tu rama, crea una carpeta con el nombre de la tarea o taller que vas a entregar, lo puedes hacer con tu editor de archivos o con el siguiente comando:
 
 ```bash
 mkdir Taller1
@@ -78,15 +76,25 @@ Dentro de esa carpeta debes guardar todos los archivos relacionados: código, im
 
 ### 4. Guardar y subir tus cambios
 
-Una vez que tengas tus archivos listos:
+Una vez que tengas tus archivos y/o cambios listos, tendras que subirlos:
 
+> Para agregar contenido al Stage ('.' es para aplicar todos los cambios, pero se puede hacer en un archivo especifico).
 ```bash
 git add .
+git add ejemplo.txt
+```
+
+> Para commitear los cambios que subiste al Stage.
+```bash
 git commit -m "Subo Taller 1"
-git push -u origin TuNombre
 ```
 
 > Asegúrate de estar en tu rama antes de hacer `push`.
+> Hace push al repositorio remoto (-u se usa cuando es una nueva rama).
+```bash
+git push -u origin NombreRama
+git push origin NombreRama
+```
 
 ---
 
@@ -113,12 +121,10 @@ Desde ahí podrás revisar tu rama y, si corresponde, abrir un **Pull Request** 
 
 ```bash
 ProgramacionAvanzada2025/
-├── Taller1_Maria/
+├── Taller1_Blas/
 │   ├── index.html
 │   └── estilos.css
-├── Taller1_Luis/
-│   └── Taller1.java
-├── README.md
+├── README.md (viene por default con el repo)
 ```
 
 Se permiten archivos en cualquier formato necesario para la entrega: `.java`, `.html`, `.css`, `.js`, `.pdf`, entre otros.
