@@ -1,73 +1,84 @@
 ````markdown
-# Programación Avanzada 2025 - Repositorio de trabajos y talleres
+# 📚 Programación Avanzada 2025 - Repositorio de entregas
 
-Este repositorio centraliza todos los trabajos, tareas y talleres de la materia **Programación Avanzada**.  
+Bienvenido al repositorio oficial de **Programación Avanzada 2025**.  
+Aquí centralizaremos todos los **trabajos**, **tareas** y **talleres** del curso de manera organizada y colaborativa.
 
-Cada estudiante debe crear su propia rama para subir sus entregas de forma ordenada, evitando conflictos y respetando el trabajo de los demás.
-
----
-
-## Requisitos previos
-
-- Tener instalado Git.  
-- Cuenta activa en GitHub.  
-- Un editor de código (como Visual Studio Code).  
-
-Funciona en Windows, Linux y macOS.
+Cada estudiante trabajará en su propia rama para subir sus entregas sin interferir con el trabajo de los demás.  
+El objetivo es mantener una estructura clara, ordenada y fácil de mantener.
 
 ---
 
-## Cómo subir tus trabajos
+## ⚙️ Requisitos previos
+
+Antes de comenzar, asegúrate de tener lo siguiente:
+
+- Git instalado en tu sistema.
+- Una cuenta activa en GitHub.
+- Un editor de código (recomendado: Visual Studio Code).
+- Acceso a la terminal o consola.
+
+Compatible con Windows, Linux y macOS.
+
+---
+
+## 🚀 ¿Cómo subir tus trabajos?
 
 ### 1. Clonar el repositorio
 
-Puedes clonar usando:
+Puedes clonar este repositorio de dos maneras:
 
-- **SSH** (si tienes configuradas las claves SSH):
+- **SSH** (si ya configuraste tus claves SSH):
 
   ```bash
   git clone git@github.com:SubaruDev0/ProgramacionAvanzada2025.git
 ````
 
-* **HTTPS** (si no tienes configuradas las claves SSH):
+* **HTTPS** (más simple si no configuraste claves):
 
   ```bash
   git clone https://github.com/SubaruDev0/ProgramacionAvanzada2025.git
   ```
 
-Luego, ingresa a la carpeta del proyecto:
+Luego entra a la carpeta del proyecto:
 
 ```bash
 cd ProgramacionAvanzada2025
 ```
 
+---
+
 ### 2. Crear una rama con tu nombre
 
-Cada estudiante debe trabajar en su propia rama para mantener el orden. Crea la rama con:
+Cada estudiante debe tener su propia rama. Crea la tuya con:
 
 ```bash
 git checkout -b TuNombre
 ```
 
-Por ejemplo:
+Ejemplo:
 
 ```bash
-git checkout -b JuanPerez
+git checkout -b MariaGomez
 ```
+
+---
 
 ### 3. Crear una carpeta para la actividad
 
-Dentro de tu rama, crea una carpeta con el nombre de la tarea o taller que vas a entregar.
+En tu rama, crea una carpeta con el nombre de la tarea o taller que vas a entregar:
 
 ```bash
 mkdir Taller1
 ```
 
-Guarda ahí todos los archivos relacionados.
+Dentro de esa carpeta debes guardar todos los archivos relacionados: código, imágenes, documentos, etc.
 
-### 4. Guardar y subir los cambios
+---
 
-Cuando termines, añade los archivos, realiza un commit y sube tu rama al repositorio remoto:
+### 4. Guardar y subir tus cambios
+
+Una vez que tengas tus archivos listos:
 
 ```bash
 git add .
@@ -75,49 +86,50 @@ git commit -m "Subo Taller 1"
 git push -u origin TuNombre
 ```
 
-Asegúrate de estar en tu rama antes de hacer `push`.
-
-### 5. Revisar en GitHub
-
-Ingresa al repositorio en GitHub para verificar tu rama y archivos. Si es necesario, abre un Pull Request para integrar cambios a otra rama (como `main`).
+> Asegúrate de estar en tu rama antes de hacer `push`.
 
 ---
 
-## Reglas y organización
+### 5. Verifica tu rama en GitHub
 
-* Usa una rama por persona.
-* Crea una carpeta por actividad.
-* No modifiques archivos de otros.
-* Utiliza mensajes claros y descriptivos en los commits. Ejemplos:
+Ingresa a la página del repositorio en GitHub.
+Desde ahí podrás revisar tu rama y, si corresponde, abrir un **Pull Request** para fusionar tus cambios con otra rama (por ejemplo, `main`).
+
+---
+
+## 🧭 Reglas de trabajo
+
+* ✅ Una rama por persona.
+* 📁 Una carpeta por entrega (usa nombres claros).
+* 🚫 No modificar archivos de otros compañeros.
+* 📝 Commits claros y específicos. Ejemplos:
 
   * `"Subo Taller 2 con HTML y CSS"`
-  * `"Agrego solución al ejercicio de clases en Java"`
+  * `"Agrego ejercicios resueltos de clases en Java"`
 
 ---
 
-## Estructura recomendada
+## 📁 Estructura sugerida
 
 ```bash
 ProgramacionAvanzada2025/
-├── Taller1_Juan/
+├── Taller1_Maria/
 │   ├── index.html
 │   └── estilos.css
-├── Taller1_Camila/
+├── Taller1_Luis/
 │   └── Taller1.java
 ├── README.md
 ```
 
-Puedes usar cualquier tipo de archivo que se requiera: `.java`, `.html`, `.css`, `.js`, `.pdf`, etc.
+Se permiten archivos en cualquier formato necesario para la entrega: `.java`, `.html`, `.css`, `.js`, `.pdf`, entre otros.
 
 ---
 
-## Dudas o consultas
+## ❓ Dudas o consultas
 
-Contactame, tienes mi numero...quiza, o a un compañero con experiencia. El objetivo es colaborar eficientemente y sin conflictos.
+Si tienes preguntas o necesitas ayuda:
 
----
+* Puedes escribirme directamente si tienes mi contacto.
+* O consultar a un compañero con experiencia.
 
-**Trabajo en equipo y compromiso.**
-
-```
-
+El objetivo es trabajar de manera ordenada, colaborativa y sin complicaciones.
