@@ -12,7 +12,6 @@ body {
 .container {
     background-color: #ffffff; /* Fondo blanco */
     max-width: 900px; /* Ancho máximo */
-    width: 100%; /* Ancho relativo */
     padding: 40px;
     border-radius: 50px; /* Bordes redondeados grandes */
     box-shadow: 0px 10px 22px rgba(0, 0, 0, 0.575); /* Sombra (x: 0px, y: 10px, blur: 22px, color con opacidad) */
