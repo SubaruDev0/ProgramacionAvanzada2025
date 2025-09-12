@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap');
+
+body {
+    background-color: #3092565d;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.hojaBase {
+    width: 210mm;
+    height: 297mm;
+    margin: 20px auto;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px rgba(1, 12, 14, 0.992); 
+    position: relative; 
+}
+
+.nombre {
+    background: #1f7c74fd;
+    border: #1f7c74;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    padding-left: 400px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    color: #ffffff; 
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; 
+    z-index: 1;         
+}
+
+.nombre h1 {
+    font-size: 40px;
+    margin: 0; 
+    margin-top: 10px;             
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nombre h2 {
+    font-size: 20px;
+    margin-top: 4px;        
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+.izquierda {
+    background: #03b194;       
+    border: 2px solid #03b194;    
+    padding: 20px;             
+    width: 280px;             
+    box-sizing: border-box;    
+    display: flex;
+    flex-direction: column;   
+    gap: 20px; 
+    position: absolute;        
+    top: 0;                    
+    left: 50px;                   
+    height: 100%;             
+    z-index: 2;                
+}
+
+
+.derecha {
+    margin-left: 350px;        
+    padding: 20px;             
+    display: flex;
+    flex-direction: column;    
+    gap: 15px;}
+
+.izquierda hr {
+    border: none;            
+    height: 2px;               
+    background-color: #ffffff; 
+    margin: 10px 0px 0px 0px;           
+    border-radius: 1px;        
+}
+
+.foto img { 
+    width: 200px; 
+    height: 200px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid #ffffff; 
+    position: relative; 
+    display: block; 
+    display: flex; 
+    margin-top: 7px;
+    left: 12px; 
+}
+
+.izquierda h3 {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    font-size: 22px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.izquierda h4 {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 500;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.izquierda p,
+.izquierda li {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #000000;
+    margin: 5px 0;
+}
+
+.izquierda ul {
+    padding-left: 18px; 
+    margin: 0;          
+}
+
+.derecha ul {
+    padding-left: 18px; 
+    margin: 0;          
+}
+
+.derecha h3 {
+    font-family: 'Montserrat', sans-serif; 
+    font-weight: 700; 
+    font-size: 22px;
+    color: #088379;
+    margin-bottom: 10px;
+}
+
+.derecha h4 {
+    font-family: 'Roboto', sans-serif; 
+    font-weight: 500;
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+a {
+    color: #ffffff; 
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline; 
+}
