@@ -1,0 +1,165 @@
+/* =====================
+   RESET GLOBAL
+   ===================== */
+/* Elimina márgenes y padding por defecto de todos los elementos y establece box-sizing para que padding y border se incluyan en ancho/alto */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* =====================
+   BODY
+   ===================== */
+/* Configuración general del body y html: altura completa, fuente principal y posición relativa */
+body, html {
+    height: 100%;
+    font-family: "Cascadia Code PL", Arial, sans-serif;
+    position: relative;
+}
+
+/* =====================
+   BANNER FULL-SCREEN
+   ===================== */
+/* Banner fijo que ocupa toda la pantalla */
+.banner {
+    position: fixed; /* siempre visible como fondo */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 0; /* detrás de todo el contenido */
+}
+
+/* Imagen de fondo que cubre todo el banner */
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* asegura que la imagen cubra toda la pantalla sin distorsión */
+}
+
+/* Overlay azul semitransparente sobre la imagen para mejorar contraste y visibilidad del formulario */
+.banner .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(41, 128, 185, 0.5); /* azul semitransparente */
+}
+
+/* =====================
+   FORMULARIO CENTRAL
+   ===================== */
+/* Contenedor del login centrado vertical y horizontalmente */
+.login-container {
+    position: relative; /* encima del banner */
+    z-index: 1; /* asegura que esté delante del banner */
+    background-color: rgba(255, 255, 255, 0.95); /* semi-transparente para suavizar overlay */
+    padding: 50px 40px;
+    border-radius: 20px; /* esquinas redondeadas */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2); /* sombra suave */
+    width: 380px; /* ancho fijo */
+    text-align: center;
+    margin: 0 auto;
+    top: 50%;
+    transform: translateY(-50%); /* centra verticalmente */
+}
+
+/* Título del login */
+.login-container h1 {
+    margin-bottom: 30px;
+    color: #2980b9; /* azul principal */
+    font-size: 32px;
+}
+
+/* =====================
+   CAMPOS DEL FORMULARIO
+   ===================== */
+/* Contenedor de cada input + label */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left; /* labels alineados a la izquierda */
+}
+
+/* Estilo de los labels */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50; /* gris oscuro */
+}
+
+/* Estilo de los inputs */
+.form-group input {
+    width: 100%;
+    padding: 14px 12px;
+    border: 1px solid #aeb6bf; /* borde gris claro */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* transición suave al enfocar */
+}
+
+/* Efecto al enfocar input */
+.form-group input:focus {
+    border-color: #2980b9; /* azul al seleccionar */
+    box-shadow: 0 0 10px rgba(41,128,185,0.3);
+    outline: none;
+}
+
+/* =====================
+   BOTÓN DE LOGIN
+   ===================== */
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #2980b9, #3498db); /* degradado azul */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Efecto hover */
+button:hover {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* invertir degradado */
+    transform: translateY(-3px); /* pequeño levantamiento */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* Efecto al presionar */
+button:active {
+    background: #246fa4; /* azul más oscuro */
+    transform: translateY(0); /* vuelve a la posición original */
+}
+
+/* =====================
+   RESPONSIVE
+   ===================== */
+/* Ajustes para pantallas pequeñas */
+@media screen and (max-width: 480px) {
+    .login-container {
+        width: 90%; /* ancho adaptativo */
+        padding: 30px 20px;
+    }
+
+    .login-container h1 {
+        font-size: 28px; /* título más pequeño */
+    }
+
+    .form-group input {
+        padding: 12px 10px;
+        font-size: 15px;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 12px;
+    }
+}

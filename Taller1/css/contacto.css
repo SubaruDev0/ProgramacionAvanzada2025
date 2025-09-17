@@ -1,0 +1,31 @@
+.simple-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 320px;
+}
+
+.simple-form input,
+.simple-form select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #dfe7ee;
+}
+
+.simple-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  background: #0a84ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 8px;
+    align-items: flex-start;
+  }
+}
