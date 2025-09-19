@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 -----
 
@@ -223,6 +222,3 @@ Si tienes preguntas o necesitas ayuda:
 El objetivo es trabajar de manera ordenada, colaborativa y sin complicaciones.
 
 -----
-=======
-<h1>Hola Mundo</h1>
->>>>>>> 8b36e237741dbb39318ea08b5184549fb6e19250
