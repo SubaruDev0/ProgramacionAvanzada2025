@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Meta charset para usar UTF-8 -->
     <meta charset="UTF-8">
-    <!-- Configuración de viewport para responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Dental - Servicios</title>
-    <!-- Enlace al CSS externo -->
     <link rel="stylesheet" href="css/servicios.css">
 </head>
-</head>
 <body>
-<header class="header">
-<h1>Clínica Mabel</h1>
-        <<nav>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Clínica Dental Logo">
+        </div>
+        <nav>
             <ul>
                 <li><a href="inicio.html">Inicio</a></li>
-                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
                 <li><a href="equipo.html">Equipo</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-</header>
-<section class="banner">
-        <!-- Imagen de fondo del banner -->
-        <img src="img/banner.png" alt="Banner principal">
+    </header>
 
-        <!-- Texto superpuesto en el banner -->
-        <div class="banner-text">
-            <h1>Bienvenidos a nuestra Clínica Dental</h1>
-            <p>Los mejores tratamientos para tu salud bucal</p>
+    <!-- Sección de Servicios -->
+    <main>
+        <section id="servicios" class="servicios-grid">
+            <div class="servicio-card">
+                <img src="img/odontologia.jpg" alt="Odontología general">
+                <h3>Odontología general</h3>
+                <p>Revisiones, limpiezas y tratamientos básicos para mantener tu salud bucal.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="img/Implante.jpeg" alt="Ortodoncia">
+                <h3>Ortodoncia</h3>
+                <p>Corrección de la posición de los dientes y la mordida con brackets o alineadores.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="img/implantes.jpg" alt="Implantes dentales">
+                <h3>Implantes dentales</h3>
+                <p>Reemplazo de piezas dentales perdidas con implantes de alta calidad.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="img/blanqueamiento.jpg" alt="Blanqueamiento">
+                <h3>Blanqueamiento</h3>
+                <p>Tratamientos para aclarar el color de tus dientes y mejorar tu sonrisa.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+ <footer>
+        <p>&copy; 2025 Clínica Dental. Todos los derechos reservados.</p>
+        <!-- Redes sociales -->
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
         </div>
-    </section>
-
-
-<main>
-<section id="servicios" class="servicio">
-<h2>Servicios</h2>
-<ul class="services">
-<li>Odontología general</li>
-<li>Ortodoncia</li>
-<li>Implantes</li>
-<li>Blanqueamiento</li>
-</ul>
-</section>
-
-
-
-<section id="turnos" class="section">
-<h2>Pedir turno</h2>
-<form class="simple-form">
-<input type="text" placeholder="Nombre" required>
-<input type="number" placeholder="Rut" required>
-<input type="tel" placeholder="Teléfono" required>
-<select>
-<option>Selecciona servicio</option>
-<option>Odontología general</option>
-<option>Ortodoncia</option>
-<option>Implantes</option>
-</select>
-<button type="submit">Enviar</button>
-</form>
-</section>
-
-
-
-
-<footer class="footer">© 2025 Clínica Mabel</footer>
+    </footer>
 </body>
 </html>
