@@ -1,0 +1,152 @@
+:root{
+  --color-acento: #3e1e49;     /* ← CAMBIAR COLOR PRINCIPAL */
+  --color-acento-osc: #177272;
+  --color-texto: #0f172a;
+  --color-muted: #475569;
+  --color-blanco: #ffffff;
+  --color-fondo: #262121;      /* fondo de la página */
+  --shadow: 0 12px 24px rgba(0,0,0,.12);
+
+  --page-max: 980px;           /* ← ANCHO TOTAL SIMILAR AL EJEMPLO */
+  --left-w: 280px;             /* ancho columna izquierda */
+  --gap: 28px;
+  --radius: 12px;
+  --line: 1px solid rgba(0,0,0,.08);
+}
+
+/* Reset básico */
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans";
+  color: var(--color-texto);
+  background: var(--color-fondo);
+  line-height: 1.5;
+}
+
+/* Contenedor centrado tipo “hoja” */
+.page{
+  display: grid;
+  place-items: start center;
+  padding: 28px 16px;
+}
+.cv-card{
+  width: 100%;
+  max-width: var(--page-max);
+  background: var(--color-blanco);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: grid;
+  grid-template-columns: var(--left-w) 1fr;
+  gap: var(--gap);
+  padding: 0; /* bordes limpios como el ejemplo */
+  overflow: hidden;
+}
+
+/* Columna izquierda */
+.left{
+  background: #e7f6f6; /* leve tinte como en el ejemplo */
+  padding: 20px 18px;
+  border-right: var(--line);
+}
+.photo{
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 12px 0 18px;
+}
+.photo img{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--color-acento);
+  box-shadow: 0 8px 22px rgba(0,0,0,.15);
+  background: #ddd;
+}
+.block{ margin-top: 8px; }
+.block-title{
+  margin: 0 0 10px 0;
+  color: var(--color-texto);
+  font-size: 18px;
+  font-weight: 800;
+}
+.sep{
+  border: none;
+  border-top: var(--line);
+  margin: 14px 0;
+}
+.list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.list li{ margin: 6px 0; }
+.list a{
+  color: var(--color-acento-osc);
+  text-decoration: none;
+}
+.list a:hover{ text-decoration: underline; }
+.list.tight li{ margin: 4px 0; }
+
+/* Columna derecha */
+.right{
+  padding: 22px 24px 28px 6px;
+}
+
+/* Encabezado con franja y nombre grande */
+.head{
+  background: linear-gradient(90deg, var(--color-acento), var(--color-acento-osc));
+  color: var(--color-blanco);
+  padding: 22px 24px;
+  border-radius: 10px;
+  margin: 16px 0 20px;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.2);
+}
+.head h1{
+  margin: 0;
+  font-size: clamp(26px, 4vw, 34px);
+  letter-spacing: .3px;
+}
+.subtitle{
+  margin: 4px 0 0 0;
+  opacity: .95;
+}
+
+/* Secciones de contenido */
+.section{
+  margin: 18px 0 8px;
+}
+.section h2{
+  margin: 0 0 8px 0;
+  color: var(--color-acento-osc);
+  font-size: 22px;
+}
+.muted{ color: var(--color-muted); }
+
+/* Experiencias tipo lista limpia */
+.exp{ display: grid; gap: 12px; }
+.exp-item{
+  padding-left: 10px;
+  border-left: 3px solid var(--color-acento);
+}
+.exp-head{ font-weight: 700; }
+.exp-time{
+  font-size: 13px;
+  color: var(--color-muted);
+  margin: 2px 0 6px;
+}
+
+/* Responsive */
+@media (max-width: 860px){
+  .cv-card{
+    grid-template-columns: 1fr;
+  }
+  .right{
+    padding: 20px;
+  }
+  .left{
+    border-right: none;
+    border-bottom: var(--line);
+  }
+}
