@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Currículum Vitae — Benjamin Ignacio Soto Oyarzún</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#0b6efd;
+      --muted:#6b7280;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --maxw:900px;
+      --radius:12px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{background:var(--bg);margin:24px;color:#111}
+    .container{max-width:var(--maxw);margin:0 auto;background:linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.95));border-radius:var(--radius);overflow:hidden;box-shadow:0 10px 30px rgba(16,24,40,0.08)}
+    header{display:flex;gap:20px;padding:28px}
+    .avatar{flex:0 0 120px}
+    .avatar img{width:120px;height:120px;object-fit:cover;border-radius:16px;border:4px solid #fff;box-shadow:0 6px 18px rgba(2,6,23,0.08)}
+    .intro{flex:1}
+    h1{margin:0;font-size:24px}
+    .title{color:var(--muted);margin-top:4px}
+    .meta{margin-top:12px;display:flex;flex-wrap:wrap;gap:10px;font-size:14px;color:var(--muted)}
+
+    main{display:grid;grid-template-columns:1fr 320px;gap:28px;padding:28px;border-top:1px solid rgba(15,23,42,0.04)}
+    .section{background:transparent}
+    .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(2,6,23,0.03);margin-bottom:16px}
+    h2{font-size:16px;margin:0 0 12px 0}
+    p.lead{color:var(--muted);margin:0 0 12px}
+
+    .job{margin-bottom:14px}
+    .job h3{margin:0;font-size:15px}
+    .job .when{color:var(--muted);font-size:13px;margin-bottom:6px}
+    ul{margin:8px 0 0 18px}
+
+    .sidebar{display:flex;flex-direction:column;gap:12px}
+    .contact-list{display:flex;flex-direction:column;gap:6px;font-size:14px}
+    .skill{display:flex;align-items:center;justify-content:space-between;font-size:14px;margin:6px 0}
+    .skill .bar{height:8px;background:#e6eefc;border-radius:999px;flex:1;margin-left:10px;overflow:hidden}
+    .skill .bar > i{display:block;height:100%;background:var(--accent);border-radius:999px}
+
+    footer{padding:18px 28px;background:rgba(2,6,23,0.02);text-align:right;font-size:13px;color:var(--muted);border-top:1px solid rgba(15,23,42,0.03)}
+
+    .print-btn{background:transparent;border:1px solid var(--accent);color:var(--accent);padding:8px 12px;border-radius:8px;cursor:pointer}
+
+    @media (max-width:880px){main{grid-template-columns:1fr;padding:20px}header{flex-direction:row;align-items:center} .avatar{display:none}}
+
+    @media print{
+      body{background:white}
+      .container{box-shadow:none;border-radius:0}
+      .print-only{display:none}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar">
+        <img src="https://pm1.aminoapps.com/6464/c471f0ec118c547eb025d830865eb4337dd6c64a_hq.jpg" alt="Benjamin Soto">
+      </div>
+      <div class="intro">
+        <h1>Benjamin Ignacio Soto Oyarzún</h1>
+        <div class="title">Estudiante Universitario</div>
+        <div class="meta">
+          <div>📍 Concepción, Chile</div>
+          <div>✉️ bsotoo1@correo.uss.cl (Universitario)</div>
+          <div>✉️ soto619ft@gmail.com (Personal)</div>
+          <div>📱 +56 9 7553 4655</div>
+        </div>
+        <p class="lead">Estudiante motivado, con formación en educación básica y media en Colegio Creación Chillán, actualmente cursando la carrera de Ingeniería Civil Informática en la Universidad San Sebastián, Concepción.</p>
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <div class="card section">
+          <h2>Educación</h2>
+          <div>
+            <h3>Colegio Creación Chillán</h3>
+            <div class="when">Enseñanza Básica y Media</div>
+          </div>
+          <div style="margin-top:10px">
+            <h3>Universidad San Sebastián — Concepción</h3>
+            <div class="when">Estudiante actual</div>
+          </div>
+        </div>
+
+        <div class="card section">
+          <h2>Experiencia</h2>
+          <p>Aún no cuento con experiencia laboral formal. Abierto a oportunidades para adquirir experiencia profesional y aplicar mis conocimientos.</p>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="card">
+          <h2>Contacto</h2>
+          <div class="contact-list">
+            <div>✉️ bsotoo1@correo.uss.cl</div>
+            <div>✉️ soto619ft@gmail.com</div>
+            <div>📱 +56 9 7553 4655</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Idiomas</h2>
+          <p>Español — Nativo</p>
+          <p>Inglés — Intermedio</p>
+        </div>
+
+        <div class="card print-only">
+          <button class="print-btn" onclick="window.print()">Imprimir / Guardar como PDF</button>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      Última actualización: Septiembre 2025
+    </footer>
+  </div>
+</body>
+</html>
