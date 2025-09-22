@@ -1,0 +1,5 @@
+Cosos necesarios de gitBash
+
+git add .
+git commit -m "mensajeDescriptivoDeLoHecho"
+git push origin GustavoFernandez
