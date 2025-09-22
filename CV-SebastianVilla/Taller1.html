@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Currículum Vitae - Sebastian Villa</title>
+  <style>
+    :root{
+      --accent:#0b76ef;
+      --muted:#6b7280;
+      --bg:#f7f9fc;
+      --card:#ffffff;
+      --radius:12px;
+      --maxw:900px;
+      --pad:20px;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      color:#111827;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;background:var(--bg);margin:0;padding:24px}
+    .container{max-width:var(--maxw);margin:0 auto}
+
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:0 6px 18px rgba(15,23,42,0.08);
+      overflow:hidden;
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:0;
+    }
+
+    header{
+      display:flex;align-items:center;gap:16px;padding:var(--pad);
+      border-bottom:1px solid #eef2f6;background:linear-gradient(90deg,rgba(11,118,239,0.06),transparent);
+    }
+    .avatar{
+      width:72px;height:72px;border-radius:12px;background:linear-gradient(180deg,var(--accent),#0365c6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px
+    }
+    .name{font-size:20px;font-weight:700;margin:0}
+    .role{color:var(--muted);margin:0;font-size:13px}
+
+    .sidebar{padding:var(--pad);border-right:1px solid #f1f5f9}
+    .section-title{font-size:12px;letter-spacing:0.08em;color:var(--muted);text-transform:uppercase;margin-bottom:8px}
+    .contact, .skills, .languages{margin-bottom:18px}
+    .contact p{margin:6px 0;font-size:14px}
+    .skill{display:flex;align-items:center;justify-content:space-between;margin:6px 0}
+    .skill .bar{flex:1;height:8px;border-radius:999px;background:#edf2fb;margin-left:10px;overflow:hidden}
+    .skill .bar > i{display:block;height:100%;background:var(--accent)}
+
+    .main{padding:var(--pad)}
+
+    .summary{margin-bottom:18px}
+    .headline{display:flex;gap:12px;align-items:center;margin-bottom:10px}
+    .headline h2{margin:0;font-size:18px}
+    .headline .sub{color:var(--muted);font-size:13px}
+
+    .job{padding:12px;border-radius:10px;border:1px solid #f0f4f8;margin-bottom:12px}
+    .job h3{margin:0;font-size:15px}
+    .job .meta{font-size:13px;color:var(--muted);margin:6px 0}
+    .job p{margin:8px 0 0 0;color:#374151;font-size:14px}
+
+    .education .edu-item{margin-bottom:12px}
+    .edu-item h4{margin:0;font-size:15px}
+    .edu-item .meta{color:var(--muted);font-size:13px}
+
+    .tags{display:flex;flex-wrap:wrap;gap:8px}
+    .tag{background:#f1f8ff;border:1px solid #e6f0ff;padding:6px 10px;border-radius:999px;font-size:13px;color:var(--accent)}
+
+    footer{padding:12px;border-top:1px dashed #eef2f6;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsive */
+    @media (max-width:820px){
+      .card{grid-template-columns:1fr}
+      .sidebar{order:2;border-right:none;border-top:1px solid #f1f5f9}
+      header{grid-column:1/-1}
+    }
+
+    /* print */
+    @media print{
+      body{background:white;padding:0}
+      .card{box-shadow:none;border-radius:0}
+      .sidebar{border-right:1px solid #eee}
+    }
+
+    /* small utility */
+    .muted{color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card" role="document">
+      <header>
+        <div class="avatar">TN</div>
+        <div>
+          <p class="name">Sebastian Elias Villa Acosta</p>
+          <p class="role">Analista • Concepcion, Chile • <span class="muted">+56 9 3886 2231</span></p>
+        </div>
+      </header>
+
+      <aside class="sidebar" aria-label="Información personal">
+        <div class="contact">
+          <div class="section-title">Contacto</div>
+          <p>Email: <a href="mailto:sevaprime1987@gmail.com">sevaprime1987@gmail.com</a></p>
+          <p>Teléfono: +56 9 38862231</p>
+          <p>LinkedIn: <a href="#">linkedin.com</a></p>
+          <p>Portfolio: <a href="#">Seva.dev</a></p>
+        </div>
+
+        <div class="skills">
+          <div class="section-title">Habilidades</div>
+          <div class="skill">HTML <div class="bar" title="20%"><i style="width:20%"></i></div></div>
+          <div class="skill">CSS <div class="bar" title="0%"><i style="width:0%"></i></div></div>
+          <div class="skill">JavaScript <div class="bar" title="60%"><i style="width:60%"></i></div></div>
+          <div class="skill">React <div class="bar" title="60%"><i style="width:60%"></i></div></div>
+        </div>
+
+        <div class="languages">
+          <div class="section-title">Idiomas</div>
+          <p>Español — Nativo</p>
+          <p>Inglés — Intermedio/Avanzado</p>
+        </div>
+
+        <div>
+          <div class="section-title">Intereses</div>
+          <div class="tags">
+            <span class="tag">Desarrollo web</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">IoT</span>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <section class="summary">
+          <div class="headline">
+            <h2>Resumen profesional</h2>
+            <div class="sub">Desarrollador Junior front-end con 3 años de experiencia en proyectos web</div>
+          </div>
+          <p>Soy un novato orientado a resultados con experiencia en construir interfaces accesibles y responsivas. Me especializo en transformar diseños en experiencias web rápidas y mantenibles. Busco oportunidades en las que pueda contribuir con código limpio y buenas prácticas.</p>
+        </section>
+
+        <section class="experience">
+          <div class="section-title">Experiencia</div>
+
+
+
+        <section class="education">
+          <div class="section-title">Educación</div>
+          <div class="edu-item">
+            <h4>Ingeniería en Informática — Universidad San Sebastian</h4>
+            <div class="meta">2023 — En proceso</div>
+            <p class="muted">Cursos relevantes: Estructuras de datos, bases de datos, interfaces web</p>
+          </div>
+        </section>
+
+        <section class="projects">
+          <div class="section-title">Proyectos destacados</div>
+          
+
+      </main>
+    </div>
+  </div>
+
+  <!-- Comentarios: reemplaza TN en el avatar por tus iniciales. Edita textos, fechas y porcentajes de habilidades. -->
+</body>
+</html>
