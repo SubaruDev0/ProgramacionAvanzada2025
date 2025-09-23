@@ -120,3 +120,23 @@ html, body {
     margin: 0;
     padding: 0;
 }
+
+.btn-contacto {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #085fe2;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: background-color 0.3s;
+}
+
+.btn-contacto:hover {
+    background-color: #2980b9;
+    
+}
