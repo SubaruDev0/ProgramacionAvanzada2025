@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental - Servicios</title>
+    <link rel="stylesheet" href="css/servicios.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo">
+            <img src="img/logo.png" alt="Clínica Dental Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="servicios.html" class="active">Servicios</a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección de Servicios -->
+    <main>
+        <section id="servicios" class="servicios-grid">
+            <div class="servicio-card">
+                <img src="img/odontologia.jpg" alt="Odontología general">
+                <h3>Odontología general</h3>
+                <p>Revisiones, limpiezas y tratamientos básicos para mantener tu salud bucal.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="img/Implante.jpeg" alt="Ortodoncia">
+                <h3>Ortodoncia</h3>
+                <p>Corrección de la posición de los dientes y la mordida con brackets o alineadores.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="img/implantes.jpg" alt="Implantes dentales">
+                <h3>Implantes dentales</h3>
+                <p>Reemplazo de piezas dentales perdidas con implantes de alta calidad.</p>
+            </div>
+            <div class="servicio-card">
+                <img src="img/blanqueamiento.jpg" alt="Blanqueamiento">
+                <h3>Blanqueamiento</h3>
+                <p>Tratamientos para aclarar el color de tus dientes y mejorar tu sonrisa.</p>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Pie de página -->
+ <footer>
+        <p>&copy; 2025 Clínica Dental. Todos los derechos reservados.</p>
+        <!-- Redes sociales -->
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <button class="btn-contacto" onclick="irAContacto()">Pedir Turno</button>
+
+<script>
+    // Función JavaScript para redirigir
+    function irAContacto() {
+      window.location.href = "pedirTurno.html";
+    }
+  </script>
+
+</body>
+</html>
