@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - Clínica Dental</title>
+    <link rel="stylesheet" href="registro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <h1>Crear Cuenta</h1>
+            <p>Completa tus datos para registrarte en nuestra clínica</p>
+        </div>
+        
+        <form class="login-form" id="registerForm">
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="firstName">Nombre</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group half-width">
+                    <label for="lastName">Apellido</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Teléfono</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="birthDate">Fecha de nacimiento</label>
+                <input type="date" id="birthDate" name="birthDate" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required minlength="6">
+                <div class="password-requirements">
+                    <p>La contraseña debe tener al menos 6 caracteres</p>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirmPassword">Confirmar contraseña</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <div id="passwordMatch" class="password-match"></div>
+            </div>
+            
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" name="terms" required>
+                    <span>Acepto los <a href="#" class="terms-link">términos y condiciones</a> y la <a href="#" class="terms-link">política de privacidad</a></span>
+                </label>
+            </div>
+            
+            <button type="submit" class="login-btn">Crear Cuenta</button>
+            
+            <div class="register-link">
+                <p>¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </div>
+        </form>
+        
+        <!-- Mensaje de confirmación (oculto inicialmente) -->
+        <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+            <div class="message-icon">✓</div>
+            <h3>¡Registro exitoso!</h3>
+            <p>Tu cuenta ha sido creada correctamente. Ahora puedes iniciar sesión.</p>
+            <a href="login.html" class="login-btn" style="text-decoration: none; display: inline-block;">Ir al login</a>
+        </div>
+    </div>
+
+    <script>
+        // Validación de contraseñas coincidentes
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const passwordMatch = document.getElementById('passwordMatch');
+        
+        function validatePassword() {
+            if (confirmPassword.value === '') {
+                passwordMatch.textContent = '';
+                passwordMatch.className = 'password-match';
+            } else if (password.value === confirmPassword.value) {
+                passwordMatch.textContent = 'Las contraseñas coinciden';
+                passwordMatch.className = 'password-match valid';
+            } else {
+                passwordMatch.textContent = 'Las contraseñas no coinciden';
+                passwordMatch.className = 'password-match invalid';
+            }
+        }
+        
+        password.addEventListener('input', validatePassword);
+        confirmPassword.addEventListener('input', validatePassword);
+        
+        // Manejo del formulario
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validación final antes de enviar
+            if (password.value !== confirmPassword.value) {
+                alert('Las contraseñas no coinciden. Por favor, verifica.');
+                return;
+            }
+            
+            if (!document.querySelector('input[name="terms"]').checked) {
+                alert('Debes aceptar los términos y condiciones');
+                return;
+            }
+            
+            // Simular envío del formulario
+            document.getElementById('registerForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

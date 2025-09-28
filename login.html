@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Clínica Dental</title>
+    <link rel="stylesheet" href="style_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <h1>Iniciar Sesión</h1>
+            <p>Accede a tu cuenta para gestionar tus citas</p>
+        </div>
+        
+        <form class="login-form">
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" name="remember">
+                    <span>Recordarme</span>
+                </label>
+                <a href="contrasena.html" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+            
+            <button type="submit" class="login-btn">Iniciar Sesión</button>
+            
+            <div class="register-link">
+                <p>¿No tienes una cuenta? <a href="register.html">Regístrate aquí</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

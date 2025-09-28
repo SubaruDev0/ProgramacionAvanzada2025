@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/inicio_styles.css">
+
+</head>
+<body>
+
+    <!--Encabezado-->
+    <div class="encabezado" id = "encabezado">
+        <!--Imagen del encabezado-->
+        <div class="logo">
+            <img src="img/logo.png" alt="logo">
+        </div>
+
+        <!--Contenidos del encabezado-->
+        <nav class="menu">
+            <ul>
+                <li><a href="enc_menu">Especialidades</a></li>
+                <li><a href="enc_menu">FAQ</a></li>
+                <li><a href="enc_menu">Nosotros</a></li>
+                <li><a href="enc_menu">Contacto</a></li>
+                <li><a href="enc_menu">Equipo</a></li>
+                <li><a href="enc_menu">Login</a></li>
+            </ul>
+        </nav>
+        <div class="reserva"> <!--Reserva que va a parte-->
+            <a href="enc_menu">Reservar cita</a>
+        </div>
+    </div>
+    
+    <!--Cuerpo-->
+    <div class="cuerpo">
+        <!--Aqui van las fotos de el principio de la página-->
+        <section class="carrusel" aria-label="Galería principal">
+            <div class="paginas">
+                <div class="slide" style="background-image:url('img/imagen_inicio1.jpg')" data-index="0" aria-hidden="false"></div>
+                <div class="slide" style="background-image:url('img/imagen_inicio2.jpg')" data-index="1" aria-hidden="true"></div>
+                <div class="slide" style="background-image:url('img/imagen_inicio3.jpg')" data-index="2" aria-hidden="true"></div>
+            </div>
+            
+            <!--Puntos de cambio de páginas (o slides)-->
+            <div class="dots" role="tablist" aria-label="Seleccionar imagen">
+                <button class="dot active" data-index="0" aria-selected="true" role="tab" tabindex="0" aria-controls="slide-0"></button>
+                <button class="dot" data-index="1" aria-selected="false" role="tab" tabindex="-1" aria-controls="slide-1"></button>
+                <button class="dot" data-index="2" aria-selected="false" role="tab" tabindex="-1" aria-controls="slide-2"></button>
+            </div>
+        </section>
+
+        <!--Breve descripción de la clínica-->
+        <section id="descripcion" class="descripcion-breve">
+           <div class="container">
+                <p>
+                    Llevamos más de <strong>35 años</strong> planificando tratamientos integrales de alta valoración estética,
+                    acompañando en todo el proceso a nuestros pacientes, mejorando así el bienestar en la salud bucal de niños,
+                    adolescentes, adultos y adultos mayores de la comuna de Coronel y alrededores.
+                </p>
+                <a href="#nosotros" class="btn-saber">Saber más</a>
+            </div> 
+        </section>
+
+        <!--Especialidades -->
+        <section id="especialidades" class="especialidades">
+    <div class="container">
+        <h2>Especialidades</h2>
+        <div class="grid-especialidades">
+            <div class="tarjeta" style="background-image:url('especialidad1.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 1</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad2.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 2</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad3.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 3</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <div class="tarjeta" style="background-image:url('especialidad4.jpg')">
+                <div class="tarjeta-texto">
+                    <h3>Especialidad 4</h3>
+                </div>
+            </div>
+            <!-- Añadir mas tarjetas -->
+        </div>
+    </div>
+</section>
+
+
+        <!--Reseñas-->
+        <section id="reseñas" class="reseñas-section">
+            <h2 class="section-title">Reseñas</h2>
+
+            <div class="reseñas-wrapper">
+                <div class="reseñas-track" id="reseñas-track">
+                    <article class="review" data-index="0">
+                        <h3>Reseña 1</h3>
+                        <div class="stars">★★★★★</div>
+                        <p class="comentario">añadir comentario</p>
+                    </article>
+
+                    <article class="review" data-index="1">
+                        <h3>Reseña 2</h3>
+                        <div class="stars">★★★★★</div>
+                        <p class="comentario">añadir comentario</p>
+                    </article>
+
+                    <article class="review" data-index="2">
+                        <h3>Reseña 3</h3>
+                        <div class="stars">★★★★★</div>
+                        <p class="comentario">añadir comentario</p>
+                    </article>
+
+                    <article class="review" data-index="3">
+                        <h3>Reseña 4</h3>
+                        <div class="stars">★★★★★</div>
+                        <p class="comentario">añadir comentario</p>
+                    </article>
+
+                    <article class="review" data-index="4">
+                        <h3>Reseña 5</h3>
+                        <div class="stars">★★★★★</div>
+                        <p class="comentario">añadir comentario</p>
+                    </article>
+                </div>
+
+        <!-- Controles abajo -->
+                <div class="reseñas-controls">
+                    <button class="r-btn prev" aria-label="Anterior">‹</button>
+                    <button class="r-btn next" aria-label="Siguiente">›</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- === INSTALACIONES === -->
+        <section id="instalaciones" class="instalaciones-section">
+            <div class="instalaciones-container">
+                <div class="instalaciones-lista">
+                    <h3>Instalación 1</h3>
+                    <h3>Instalación 2</h3>
+                    <h3>Instalación 3</h3>
+                </div>
+                <div class="instalaciones-fondo"></div>
+            </div>
+        </section>
+
+        <!-- === LLAMADO A LA ACCIÓN === -->
+        <section id="cta" class="cta-section">
+            <div class="cta-background"></div>
+            <div class="cta-card">
+                <h2>Recupera tu sonrisa hoy mismo</h2>
+                <p>Agenda tu hora online y comienza tu tratamiento con nosotros.</p>
+                <a href="#reserva" class="btn-cta">Reservar cita</a>
+            </div>
+        </section>
+
+
+
+    </div>
+
+        <!-- footer-->
+        <footer class="footer">
+            <div class="footer-container">
+                <!-- Logo / nombre -->
+                <div class="footer-logo">
+                    <img src="logo.png" alt="Logo Clínica" />
+                </div>
+
+                <!-- Información de contacto -->
+                <div class="footer-info">
+                    <h4>Contacto</h4>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                    <p>Email: contacto@clinicadental.cl</p>
+                    <p>Dirección: Calle Ejemplo 123, Coronel, Chile</p>
+                </div>
+
+                <!-- Enlaces rápidos -->
+                <div class="footer-links">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#especialidades">Especialidades</a></li>
+                        <li><a href="#equipo">Equipo</a></li>
+                        <li><a href="#reseñas">Reseñas</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Redes sociales -->
+                <div class="footer-social">
+                    <h4>Síguenos</h4>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📸</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2025 Clínica Dental. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+
+    <!--Archivos js-->
+    <script src="js/inicio_script.js"></script>
+    <script src="js/hero.js"></script>
+    <script src="js/reviews.js"></script>
+</body>
+</html>

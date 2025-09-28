@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña - Clínica Dental</title>
+    <link rel="stylesheet" href="contrasena.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+            <h1>Recuperar Contraseña</h1>
+            <p>Te enviaremos un enlace para restablecer tu contraseña</p>
+        </div>
+        
+        <form class="login-form" id="forgotPasswordForm">
+            <div class="form-group">
+                <label for="email">Correo electrónico</label>
+                <input type="email" id="email" name="email" required placeholder="Ingresa tu correo electrónico">
+            </div>
+            
+            <button type="submit" class="login-btn">Enviar enlace de recuperación</button>
+            
+            <div class="register-link">
+                <p><a href="login.html">← Volver al inicio de sesión</a></p>
+            </div>
+        </form>
+        
+        <!-- Mensaje de confirmación (oculto inicialmente) -->
+        <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+            <div class="message-icon">✓</div>
+            <h3>¡Enlace enviado!</h3>
+            <p>Hemos enviado un enlace de recuperación a tu correo electrónico. Revisa tu bandeja de entrada.</p>
+            <button onclick="hideConfirmation()" class="login-btn">Aceptar</button>
+        </div>
+    </div>
+
+    <script>
+        // Manejo del formulario
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envío del formulario
+            document.getElementById('forgotPasswordForm').style.display = 'none';
+            document.getElementById('confirmationMessage').style.display = 'block';
+        });
+        
+        function hideConfirmation() {
+            document.getElementById('confirmationMessage').style.display = 'none';
+            document.getElementById('forgotPasswordForm').style.display = 'block';
+            document.getElementById('forgotPasswordForm').reset();
+        }
+    </script>
+</body>
+</html>
