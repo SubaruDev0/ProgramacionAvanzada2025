@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clínica Dental | Acceso</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cascadia+Code+PL:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="pantalla-inicial">
+        <div class="expansor-azul"></div>
+        
+        <div class="contenedor-logo">
+            <img src="img/Logo.png" alt="Logo Clínica Dental" class="logo-clinica">
+        </div>
+    </div>
+
+    <div class="contenedor-login oculto">
+        <div class="tarjeta-login">
+            <div class="encabezado-login">
+                <h2>¡Bienvenido!</h2>
+            </div>
+            
+            <form class="formulario-login" id="loginForm">
+                
+                <div class="grupo-entrada">
+                    <input type="text" id="nombreUsuario" required> 
+                    <label for="nombreUsuario"><i class="fas fa-user"></i> Usuario</label>
+                </div>
+                
+                <div class="grupo-entrada">
+                    <input type="password" id="contrasena" required>
+                    <label for="contrasena"><i class="fas fa-lock"></i> Contraseña</label>
+                </div>
+                
+                <div class="opciones-login">
+                    <label class="recordarme cntr">
+                        <input type="checkbox" id="cbx-recordar" class="hidden-xs-up"> 
+                        <div class="cbx"></div>
+                        <span class="lbl">Recordarme</span>
+                    </label>
+                    <a href="#" class="olvide-contrasena">¿Olvidaste la contraseña?</a>
+                </div>
+
+                <div id="mensajeError" class="mensaje-error oculto"></div>
+
+                <button type="submit" class="boton-acceso" data-redirect="inicio.html">Acceder</button>
+
+                <button type="button" class="boton-invitado" data-redirect="inicio.html">Acceder como invitado</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/login.js"></script>
+</body>
+</html>

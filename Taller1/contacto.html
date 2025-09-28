@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/contacto.css">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <!-- Logo de la clínica -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Clínica Dental Logo">
+        </div>
+
+        <!-- Menú de navegación -->
+        <nav>
+            <ul>
+                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="servicios.html">Servicios</a></li>
+                <li><a href="equipo.html">Equipo</a></li>
+                <li><a href="contacto.html" class="active">Contacto</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="container">
+        <!-- Sección Turnos -->
+        <section id="turnos" class="section">
+            <h2>Pedir turno</h2>
+            <form class="simple-form">
+                <input type="text" placeholder="Nombre" required>
+                <input type="text" placeholder="RUT" required>
+                <input type="tel" placeholder="Teléfono" required>
+
+                <select required>
+                    <option value="" disabled selected>Selecciona servicio</option>
+                    <option>Odontología general</option>
+                    <option>Ortodoncia</option>
+                    <option>Implantes dentales</option>
+                    <option>Endodoncia (tratamiento de conducto)</option>
+                    <option>Periodoncia (encías)</option>
+                    <option>Rehabilitación oral</option>
+                    <option>Estética dental (blanqueamiento, carillas)</option>
+                    <option>Prótesis dentales</option>
+                    <option>Cirugía oral y maxilofacial</option>
+                    <option>Odontopediatría (niños)</option>
+                    <option>Urgencias dentales</option>
+                    <option>Limpieza dental</option>
+                    <option>Radiografías y diagnóstico</option>
+                </select>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="section">
+            <h2>Contacto</h2>
+            <p>📍 Dirección: Av. Siempre Viva 123, Santiago</p>
+            <p>📞 Teléfono: +56 9 1234 5678</p>
+            <p>📧 Email: contacto@centrodental.cl</p>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Clínica Dental. Todos los derechos reservados.</p>
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>
