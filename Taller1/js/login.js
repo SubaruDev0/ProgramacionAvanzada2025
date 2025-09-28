@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const T_ROTACION_ENTRADA = 700;   
     const T_ESPERA_LOGO = 800;        
     const T_ROTACION_SALIDA = 600;    
+    const T_DURACION_ERROR = 4000; // El error desaparece a los 4 segundos
 
     /**
      * Función de ayuda para esperar un tiempo específico
@@ -40,8 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
      */
 
     /**
-     * Valida las credenciales.
-     * Requisitos: Usuario: Blas (ignora mayúsculas), Contraseña: 123
+     * Valida las credenciales. Usuario: Blas (sin mayúsculas), Contraseña: 123
      * @returns {boolean} True si las credenciales son correctas.
      */
     const validarCredenciales = () => {
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const usuarioCorrecto = 'Blas';
         const contrasenaCorrecta = '123';
 
-        // Ocultar cualquier error anterior
+        // Ocultar cualquier error anterior antes de validar
         mensajeErrorDiv.classList.add('oculto');
         
         // Comprobación de credenciales
@@ -59,10 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
             return true;
         } else {
             // MOSTRAR ERROR VISIBLE
-            mensajeErrorDiv.textContent = "Usuario o contraseña incorrectos. Inténtalo de nuevo. usuario: Blas | Contraseña: 123";
+            mensajeErrorDiv.textContent = "Usuario o contraseña incorrectos. Inténtalo de nuevo. Usuario: Blas | Contraseña: 123";
             mensajeErrorDiv.classList.remove('oculto');
             
-            // Enfocar el input de usuario
+            // Ocultar el error automáticamente después de 4 segundos
+            setTimeout(() => {
+                mensajeErrorDiv.classList.add('oculto');
+            }, T_DURACION_ERROR);
+
+            // Enfocar el input de usuario para facilitar la corrección
             inputUsuario.focus(); 
             return false;
         }
@@ -116,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
     loginForm.addEventListener('submit', (evento) => {
         evento.preventDefault(); 
         
-        // La redirección solo ocurre si las credenciales son válidas
+        // Redirección solo si las credenciales son válidas
         if (validarCredenciales()) {
             if (evento.submitter && evento.submitter.hasAttribute('data-redirect')) {
                 manejarRedireccion(evento.submitter);
@@ -126,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Maneja el clic en el botón de Acceder como Invitado (Redirección directa)
     botonInvitado.addEventListener('click', () => {
-        // Ocultar el mensaje de error si existía
+        // Ocultar el mensaje de error si existía y redirigir
         mensajeErrorDiv.classList.add('oculto');
         manejarRedireccion(botonInvitado);
     });

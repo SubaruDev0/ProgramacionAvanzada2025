@@ -18,7 +18,6 @@
  */
 body {
     margin: 0;
-    /* Aplicación de la nueva fuente */
     font-family: 'Cascadia Code PL', monospace; 
     background-color: var(--fondo-claro); 
     display: flex;
@@ -205,7 +204,7 @@ h2 { font-size: 2.0rem; color: var(--azul-principal); margin: 0; }
     color: var(--fondo-tarjeta); 
 }
 
-/* Estilo para el Mensaje de Error (Nuevo) */
+/* Estilo para el Mensaje de Error */
 .mensaje-error {
     color: #cc0000; 
     font-size: 0.9rem;
@@ -231,4 +230,39 @@ h2 { font-size: 2.0rem; color: var(--azul-principal); margin: 0; }
     from { transform: scale(1, 1); } 30% { transform: scale(1.25, 0.75); } 40% { transform: scale(0.75, 1.25); }
     50% { transform: scale(1.15, 0.85); } 65% { transform: scale(0.95, 1.05); } 75% { transform: scale(1.05, 0.95); }
     to { transform: scale(1, 1); }
+}
+
+/**
+ * --------------------------------
+ * 7. MEDIA QUERIES (RESPONSIVE DESIGN)
+ * --------------------------------
+ */
+/* Estilos para Teléfonos Móviles (ej: < 480px) */
+@media (max-width: 480px) {
+    /* La tarjeta de login ocupa todo el ancho disponible */
+    .contenedor-login {
+        max-width: 100%;
+        box-shadow: none; /* Quitamos la sombra */
+    }
+
+    /* Reducimos el padding de la tarjeta */
+    .tarjeta-login {
+        padding: 40px 30px; 
+    }
+    
+    /* Adaptamos el tamaño de la fuente para móviles */
+    h2 { 
+        font-size: 1.7rem; 
+        margin-bottom: 30px;
+    }
+
+    .grupo-entrada {
+        margin-bottom: 30px;
+    }
+    
+    /* Ajustamos el tamaño del botón */
+    .boton-acceso {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
 }
