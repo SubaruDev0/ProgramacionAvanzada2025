@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Información de Contacto | Clínica Dental</title>
+    
+    <!-- Enlaces a hojas de estilo -->
+    <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/contacto.css">
+    
+    <!-- Iconos de Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
 </head>
 <body>
-    <!-- Encabezado -->
+    <!-- =====================
+         ENCABEZADO DE PÁGINA
+    ===================== -->
     <header>
         <!-- Logo de la clínica -->
         <div class="logo">
-            <img src="img/logo.png" alt="Clínica Dental Logo">
+            <img src="img/logo.png" alt="Clínica Dental Logo"> 
         </div>
-
-        <!-- Menú de navegación -->
+        
+        <!-- Menú de navegación principal -->
         <nav>
             <ul>
                 <li><a href="inicio.html">Inicio</a></li>
@@ -26,53 +34,95 @@
         </nav>
     </header>
 
-    <!-- Contenido principal -->
+    <!-- =====================
+         CONTENIDO PRINCIPAL
+    ===================== -->
     <main class="container">
-        <!-- Sección Turnos -->
-        <section id="turnos" class="section">
-            <h2>Pedir turno</h2>
-            <form class="simple-form">
-                <input type="text" placeholder="Nombre" required>
-                <input type="text" placeholder="RUT" required>
-                <input type="tel" placeholder="Teléfono" required>
-
-                <select required>
-                    <option value="" disabled selected>Selecciona servicio</option>
-                    <option>Odontología general</option>
-                    <option>Ortodoncia</option>
-                    <option>Implantes dentales</option>
-                    <option>Endodoncia (tratamiento de conducto)</option>
-                    <option>Periodoncia (encías)</option>
-                    <option>Rehabilitación oral</option>
-                    <option>Estética dental (blanqueamiento, carillas)</option>
-                    <option>Prótesis dentales</option>
-                    <option>Cirugía oral y maxilofacial</option>
-                    <option>Odontopediatría (niños)</option>
-                    <option>Urgencias dentales</option>
-                    <option>Limpieza dental</option>
-                    <option>Radiografías y diagnóstico</option>
-                </select>
-
-                <button type="submit">Enviar</button>
-            </form>
+        <!-- Título de la sede principal -->
+        <h2 class="mapa-titulo">Sede Principal: Concepción</h2>
+        
+        <!-- Sección del mapa y ubicación -->
+        <section id="mapa-ubicacion" class="section">
+            <!-- Mapa interactivo de Google Maps -->
+            <div id="mapa-interactivo-div">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    frameborder="0"
+                    style="border:0"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    src="https://maps.google.com/maps?q=Arturo%20Prat%20450,%20Concepci%C3%B3n&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+            </div>
+            
+            <!-- Carrusel de sedes secundarias -->
+            <div class="carrusel-sedes-wrapper">
+                <h3><i class="fas fa-city"></i> Nuestras Otras Sucursales</h3>
+                <div id="carrusel-sedes" class="carrusel-sedes">
+                    <!-- Las sedes se cargan dinámicamente con JavaScript -->
+                </div>
+            </div>
         </section>
 
-        <!-- Sección Contacto -->
-        <section id="contacto" class="section">
-            <h2>Contacto</h2>
-            <p>📍 Dirección: Av. Siempre Viva 123, Santiago</p>
-            <p>📞 Teléfono: +56 9 1234 5678</p>
-            <p>📧 Email: contacto@centrodental.cl</p>
+        <!-- Sección de tarjetas informativas -->
+        <section class="info-cards">
+            <!-- Tarjeta de horarios de atención -->
+            <article class="tarjeta horario-info">
+                <h3><i class="fas fa-clock"></i> Horario de Atención</h3>
+                <p>Lunes – Viernes:</p>
+                <p class="time-slot">09:00 — 17:30</p>
+                
+                <p style="margin-top: 15px;">Sábados no festivos:</p>
+                <p class="time-slot" style="font-size: 1.4em;">09:00 — 14:00</p>
+                
+                <p style="margin-top: 15px; font-size: 0.9em; color: #888;">Atención solo con cita previa. Domingos y festivos cerrado.</p>
+            </article>
+
+            <!-- Tarjeta de información de contacto -->
+            <article class="tarjeta contacto-info">
+                <h3><i class="fas fa-id-badge"></i> Contacto Central</h3>
+                
+                <!-- Teléfono -->
+                <div class="var-item">
+                    <span>Teléfono Central</span>
+                    <a href="tel:+56912345678" class="var-value">+56 9 1234 5678 <i class="fas fa-phone-alt"></i></a>
+                </div>
+                
+                <!-- Email -->
+                <div class="var-item">
+                    <span>Correo Electrónico</span>
+                    <a href="mailto:contacto@centrodental.cl" class="var-value">contacto@centrodental.cl <i class="fas fa-envelope"></i></a>
+                </div>
+                
+                <!-- Redes sociales -->
+                <div class="var-item redes-var">
+                    <span class="redes-titulo">Aprende más de nosotros en:</span>
+                    <span class="var-value">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </span>
+                </div>
+            </article>
+
         </section>
     </main>
 
-    <!-- Pie de página -->
+    <!-- =====================
+         PIE DE PÁGINA
+    ===================== -->
     <footer>
-        <p>&copy; 2025 Clínica Dental. Todos los derechos reservados.</p>
+        <p>© 2025 Clínica Dental. Todos los derechos reservados.</p>
         <div class="redes-sociales">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
     </footer>
+    
+    <!-- =====================
+         SCRIPT DE CONTACTO
+    ===================== -->
+    <script src="js/contacto.js"></script>
 </body>
 </html>

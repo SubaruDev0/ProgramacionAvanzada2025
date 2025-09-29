@@ -1,21 +1,19 @@
-/**
- * --------------------------------
- * 1. VARIABLES DE COLOR
- * --------------------------------
- */
+/* =====================
+   ARCHIVO: login.css
+   DESCRIPCIÓN: Estilos específicos para la página de login
+   FECHA: 2025
+===================== */
+
+/* ----- VARIABLES DE COLOR ----- */
 :root {
-    --azul-principal: #0fa49c;    
-    --color-secundario: #ffca1c; 
-    --fondo-claro: #087872;      
-    --fondo-tarjeta: #ffffff;    
-    --color-fuente: #000000;     
+    --azul-principal: #0fa49c;     /* Color azul principal del diseño */
+    --color-secundario: #ffca1c;   /* Color amarillo para acentos */
+    --fondo-claro: #087872;        /* Fondo azul claro */
+    --fondo-tarjeta: #ffffff;      /* Fondo blanco para tarjetas */
+    --color-fuente: #000000;       /* Color principal de texto */
 }
 
-/**
- * --------------------------------
- * 2. ESTILOS BASE Y UTILIDADES
- * --------------------------------
- */
+/* ----- ESTILOS BASE Y UTILIDADES ----- */
 body {
     margin: 0;
     font-family: 'Cascadia Code PL', monospace; 
@@ -28,25 +26,40 @@ body {
     color: var(--color-fuente);
 }
 
-/* Clases de utilidad */
-.oculto { display: none !important; }
-.contenedor-logo.ocultar-final { display: none !important; }
-.pantalla-inicial.ocultar-fondo-blanco { background-color: transparent !important; z-index: 1; }
+/* Clases de utilidad para mostrar/ocultar elementos */
+.oculto { 
+    display: none !important; 
+}
 
-/**
- * --------------------------------
- * 3. PANTALLA DE CARGA Y LOGO
- * --------------------------------
- */
+.contenedor-logo.ocultar-final { 
+    display: none !important; 
+}
+
+.pantalla-inicial.ocultar-fondo-blanco { 
+    background-color: transparent !important; 
+    z-index: 1; 
+}
+
+/* =====================
+   PANTALLA DE CARGA Y LOGO
+===================== */
 .pantalla-inicial {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    display: flex; justify-content: center; align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
     background-color: var(--fondo-claro); 
     z-index: 100;
 }
 
+/* Expansor azul para animación de entrada */
 .expansor-azul {
-    width: 100%; height: 100%; 
+    width: 100%; 
+    height: 100%; 
     background-color: var(--azul-principal);
     position: absolute;
     transform: scaleX(0); 
@@ -55,148 +68,265 @@ body {
     z-index: 99; 
 }
 
+/* Contenedor del logo */
 .contenedor-logo {
-    opacity: 0; position: absolute; z-index: 101; perspective: 1000px; 
+    opacity: 0; 
+    position: absolute; 
+    z-index: 101; 
+    perspective: 1000px; 
 }
 
-.logo-clinica { width: 1200px; height: auto; display: block; }
+/* Logo de la clínica */
+.logo-clinica { 
+    width: 1200px; 
+    height: auto; 
+    display: block; 
+}
 
-.contenedor-logo.mostrar-logo { animation: rotar-logo 0.7s ease-out forwards; }
-.contenedor-logo.desvanecer { animation: rotar-y-desvanecer 0.6s ease-in forwards; }
+/* Animaciones del logo */
+.contenedor-logo.mostrar-logo { 
+    animation: rotar-logo 0.7s ease-out forwards; 
+}
 
+.contenedor-logo.desvanecer { 
+    animation: rotar-y-desvanecer 0.6s ease-in forwards; 
+}
 
-/**
- * --------------------------------
- * 4. PILAR DE LOGIN Y ESTRUCTURA
- * --------------------------------
- */
+/* =====================
+   CONTENEDOR DE LOGIN
+===================== */
 .contenedor-login {
-    display: flex; justify-content: center; align-items: center; 
-    width: 100%; height: 100vh; max-width: 550px; 
-    transform: scaleX(0); transform-origin: center center; opacity: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    height: 100vh; 
+    max-width: 550px; 
+    transform: scaleX(0); 
+    transform-origin: center center; 
+    opacity: 0; 
     z-index: 50; 
     background-color: var(--fondo-tarjeta); 
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); 
 }
 
+/* Estado visible del contenedor de login */
 .contenedor-login.visible {
     opacity: 1; 
     animation: aparecer-horizontal 0.8s cubic-bezier(0.65, 0.05, 0.36, 1) forwards;
 }
 
+/* Tarjeta de login */
 .tarjeta-login {
-    padding: 60px; max-width: 490px; width: 100%; text-align: center;
-    min-width: 100%; box-sizing: border-box; background-color: transparent; 
+    padding: 60px; 
+    max-width: 490px; 
+    width: 100%; 
+    text-align: center;
+    min-width: 100%; 
+    box-sizing: border-box; 
+    background-color: transparent; 
     box-shadow: none; 
 }
 
-.encabezado-login { margin-bottom: 40px; }
+/* Encabezado del login */
+.encabezado-login { 
+    margin-bottom: 40px; 
+}
 
-h2 { font-size: 2.0rem; color: var(--azul-principal); margin: 0; }
+/* Título de bienvenida */
+h2 { 
+    font-size: 2.0rem; 
+    color: var(--azul-principal); 
+    margin: 0; 
+}
 
-/**
- * --------------------------------
- * 5. ELEMENTOS DEL FORMULARIO
- * --------------------------------
- */
+/* =====================
+   ELEMENTOS DEL FORMULARIO
+===================== */
 
-/* Campo de Entrada (Input/Label Flotante) */
-.grupo-entrada { position: relative; text-align: left; margin-bottom: 40px; }
+/* Grupo de entrada (input con label flotante) */
+.grupo-entrada { 
+    position: relative; 
+    text-align: left; 
+    margin-bottom: 40px; 
+}
 
+/* Campos de entrada */
 .grupo-entrada input { 
-    width: 100%; padding: 12px 0 5px 0; margin-bottom: 5px; 
-    font-size: 1.2rem; color: var(--azul-principal); 
-    border: none; border-bottom: 2px solid #ccc; outline: none;
-    background: transparent; box-sizing: border-box; transition: border-color 0.3s; 
+    width: 100%; 
+    padding: 12px 0 5px 0; 
+    margin-bottom: 5px; 
+    font-size: 1.2rem; 
+    color: var(--azul-principal); 
+    border: none; 
+    border-bottom: 2px solid #ccc; 
+    outline: none;
+    background: transparent; 
+    box-sizing: border-box; 
+    transition: border-color 0.3s; 
 }
 
-.grupo-entrada input:focus { border-color: var(--azul-principal); box-shadow: none; }
+/* Efecto focus en campos */
+.grupo-entrada input:focus { 
+    border-color: var(--azul-principal); 
+    box-shadow: none; 
+}
 
+/* Labels flotantes */
 .grupo-entrada label {
-    position: absolute; top: 12px; left: 0; padding: 0; 
-    font-size: 1.2rem; color: #999; pointer-events: none;
-    transition: 0.5s; display: flex; align-items: center;
+    position: absolute; 
+    top: 12px; 
+    left: 0; 
+    padding: 0; 
+    font-size: 1.2rem; 
+    color: #999; 
+    pointer-events: none;
+    transition: 0.5s; 
+    display: flex; 
+    align-items: center;
 }
 
+/* Iconos en los labels */
 .grupo-entrada label i {
-    margin-right: 12px; color: #999; font-size: 1.4rem; transition: 0.5s; 
+    margin-right: 12px; 
+    color: #999; 
+    font-size: 1.4rem; 
+    transition: 0.5s; 
 }
 
-/* Animación del Label (Flotante) */
-.grupo-entrada input:focus + label, .grupo-entrada input:valid + label {
-    top: -25px; left: 0; color: var(--azul-principal); font-size: 0.9rem; 
+/* Animación del label (flotante) */
+.grupo-entrada input:focus + label, 
+.grupo-entrada input:valid + label {
+    top: -25px; 
+    left: 0; 
+    color: var(--azul-principal); 
+    font-size: 0.9rem; 
 }
 
-.grupo-entrada input:focus + label i, .grupo-entrada input:valid + label i {
+.grupo-entrada input:focus + label i, 
+.grupo-entrada input:valid + label i {
     color: var(--azul-principal);
 }
 
-
-/* Checkbox "Jelly" */
+/* ----- CHECKBOX "RECORDARME" ----- */
 .opciones-login {
-    display: flex; justify-content: space-between; align-items: center;
-    margin-bottom: 30px; font-size: 1rem; color: #555;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    margin-bottom: 30px; 
+    font-size: 1rem; 
+    color: #555;
 }
 
-.recordarme { display: flex; align-items: center; cursor: pointer; user-select: none; padding-top: 5px; }
+.recordarme { 
+    display: flex; 
+    align-items: center; 
+    cursor: pointer; 
+    user-select: none; 
+    padding-top: 5px; 
+}
 
-.hidden-xs-up { display: none!important; }
+/* Checkbox oculto */
+.hidden-xs-up { 
+    display: none!important; 
+}
 
-.cntr { position: relative; display: flex; align-items: center; }
+.cntr { 
+    position: relative; 
+    display: flex; 
+    align-items: center; 
+}
 
-/* TAMAÑO FINAL: 20px */
+/* Checkbox personalizado */
 .cbx {
-	position: relative; width: 20px; height: 20px; 
-	border: 1px solid #c8ccd4; border-radius: 3px;
-	transition: background 0.1s ease; cursor: pointer; display: block;
+    position: relative; 
+    width: 20px; 
+    height: 20px; 
+    border: 1px solid #c8ccd4; 
+    border-radius: 3px;
+    transition: background 0.1s ease; 
+    cursor: pointer; 
+    display: block;
     margin-right: 8px; 
 }
 
+/* Checkmark del checkbox */
 .cbx:after {
-	content: ''; position: absolute; top: 1px; left: 5px; 
-	width: 5px; height: 11px; opacity: 0;
-	transform: rotate(45deg) scale(0);
-	border-right: 2px solid var(--fondo-tarjeta); 
-	border-bottom: 2px solid var(--fondo-tarjeta); 
-	transition: all 0.3s ease; transition-delay: 0.15s;
+    content: ''; 
+    position: absolute; 
+    top: 1px; 
+    left: 5px; 
+    width: 5px; 
+    height: 11px; 
+    opacity: 0;
+    transform: rotate(45deg) scale(0);
+    border-right: 2px solid var(--fondo-tarjeta); 
+    border-bottom: 2px solid var(--fondo-tarjeta); 
+    transition: all 0.3s ease; 
+    transition-delay: 0.15s;
 }
 
-.lbl { vertical-align: middle; cursor: pointer; }
+.lbl { 
+    vertical-align: middle; 
+    cursor: pointer; 
+}
 
+/* Estado checked del checkbox */
 #cbx-recordar:checked ~ .cbx {
-	border-color: transparent; background: var(--azul-principal); 
-	animation: jelly 0.6s ease;
+    border-color: transparent; 
+    background: var(--azul-principal); 
+    animation: jelly 0.6s ease;
 }
 
 #cbx-recordar:checked ~ .cbx:after {
-	opacity: 1; transform: rotate(45deg) scale(1);
+    opacity: 1; 
+    transform: rotate(45deg) scale(1);
 }
 
 /* Enlace "¿Olvidaste la contraseña?" */
 .olvide-contrasena {
-    color: var(--azul-principal); text-decoration: none; font-weight: bold; transition: color 0.3s;
+    color: var(--azul-principal); 
+    text-decoration: none; 
+    font-weight: bold; 
+    transition: color 0.3s;
 }
 
-.olvide-contrasena:hover { color: var(--fondo-claro); }
+.olvide-contrasena:hover { 
+    color: var(--fondo-claro); 
+}
 
-/* Botones */
+/* ----- BOTONES ----- */
 .boton-acceso { 
-    width: 100%; padding: 18px; 
-    background-color: var(--color-secundario); color: var(--color-fuente); 
-    border: none; border-radius: 10px; font-size: 1.4rem; 
-    cursor: pointer; transition: background-color 0.3s; 
-    font-weight: bold; margin-bottom: 20px; 
+    width: 100%; 
+    padding: 18px; 
+    background-color: var(--color-secundario); 
+    color: var(--color-fuente); 
+    border: none; 
+    border-radius: 10px; 
+    font-size: 1.4rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+    font-weight: bold; 
+    margin-bottom: 20px; 
 }
 
-.boton-acceso:hover { background-color: #e5b600; }
+.boton-acceso:hover { 
+    background-color: #e5b600; 
+}
 
 .boton-invitado {
-    width: 100%; padding: 10px; 
-    background-color: transparent; color: var(--azul-principal); 
-    border: 2px solid var(--azul-principal); border-radius: 10px; 
+    width: 100%; 
+    padding: 10px; 
+    background-color: transparent; 
+    color: var(--azul-principal); 
+    border: 2px solid var(--azul-principal); 
+    border-radius: 10px; 
     font-size: 1.1rem; 
-    cursor: pointer; transition: all 0.3s; 
-    font-weight: bold; text-align: center; display: block;
+    cursor: pointer; 
+    transition: all 0.3s; 
+    font-weight: bold; 
+    text-align: center; 
+    display: block;
 }
 
 .boton-invitado:hover {
@@ -204,7 +334,7 @@ h2 { font-size: 2.0rem; color: var(--azul-principal); margin: 0; }
     color: var(--fondo-tarjeta); 
 }
 
-/* Estilo para el Mensaje de Error */
+/* ----- MENSAJE DE ERROR ----- */
 .mensaje-error {
     color: #cc0000; 
     font-size: 0.9rem;
@@ -217,40 +347,55 @@ h2 { font-size: 2.0rem; color: var(--azul-principal); margin: 0; }
     text-align: center;
 }
 
-/**
- * --------------------------------
- * 6. KEYFRAMES DE ANIMACIÓN
- * --------------------------------
- */
-@keyframes expandir-horizontalmente { to { transform: scaleX(1); } }
-@keyframes rotar-logo { 0% { transform: rotateY(-90deg); opacity: 0; } 50% { transform: rotateY(0deg); opacity: 1; } 100% { transform: rotateY(0deg); opacity: 1; } }
-@keyframes rotar-y-desvanecer { 0% { transform: rotateY(0deg); opacity: 1; } 100% { transform: rotateY(90deg); opacity: 0; } }
-@keyframes aparecer-horizontal { 0% { transform: scaleX(0); } 100% { transform: scaleX(1); } }
+/* =====================
+   ANIMACIONES (KEYFRAMES)
+===================== */
+@keyframes expandir-horizontalmente { 
+    to { transform: scaleX(1); } 
+}
+
+@keyframes rotar-logo { 
+    0% { transform: rotateY(-90deg); opacity: 0; } 
+    50% { transform: rotateY(0deg); opacity: 1; } 
+    100% { transform: rotateY(0deg); opacity: 1; } 
+}
+
+@keyframes rotar-y-desvanecer { 
+    0% { transform: rotateY(0deg); opacity: 1; } 
+    100% { transform: rotateY(90deg); opacity: 0; } 
+}
+
+@keyframes aparecer-horizontal { 
+    0% { transform: scaleX(0); } 
+    100% { transform: scaleX(1); } 
+}
+
 @keyframes jelly {
-    from { transform: scale(1, 1); } 30% { transform: scale(1.25, 0.75); } 40% { transform: scale(0.75, 1.25); }
-    50% { transform: scale(1.15, 0.85); } 65% { transform: scale(0.95, 1.05); } 75% { transform: scale(1.05, 0.95); }
+    from { transform: scale(1, 1); } 
+    30% { transform: scale(1.25, 0.75); } 
+    40% { transform: scale(0.75, 1.25); }
+    50% { transform: scale(1.15, 0.85); } 
+    65% { transform: scale(0.95, 1.05); } 
+    75% { transform: scale(1.05, 0.95); }
     to { transform: scale(1, 1); }
 }
 
-/**
- * --------------------------------
- * 7. MEDIA QUERIES (RESPONSIVE DESIGN)
- * --------------------------------
- */
-/* Estilos para Teléfonos Móviles (ej: < 480px) */
+/* =====================
+   DISEÑO RESPONSIVE
+===================== */
 @media (max-width: 480px) {
-    /* La tarjeta de login ocupa todo el ancho disponible */
+    /* Tarjeta de login ocupa todo el ancho en móviles */
     .contenedor-login {
         max-width: 100%;
-        box-shadow: none; /* Quitamos la sombra */
+        box-shadow: none;
     }
 
-    /* Reducimos el padding de la tarjeta */
+    /* Reducir padding en móviles */
     .tarjeta-login {
         padding: 40px 30px; 
     }
     
-    /* Adaptamos el tamaño de la fuente para móviles */
+    /* Ajustar tamaño de fuente para móviles */
     h2 { 
         font-size: 1.7rem; 
         margin-bottom: 30px;
@@ -260,9 +405,16 @@ h2 { font-size: 2.0rem; color: var(--azul-principal); margin: 0; }
         margin-bottom: 30px;
     }
     
-    /* Ajustamos el tamaño del botón */
+    /* Ajustar tamaño del botón en móviles */
     .boton-acceso {
         padding: 15px;
         font-size: 1.2rem;
+    }
+    
+    /* Opciones de login en columna en móviles */
+    .opciones-login {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
     }
 }

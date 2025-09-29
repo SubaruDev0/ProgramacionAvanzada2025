@@ -1,161 +1,440 @@
-/* Reset */
+/* =====================
+   ARCHIVO: contacto.css
+   DESCRIPCIÓN: Estilos específicos para la página de contacto
+   FECHA: 2025
+===================== */
+
+/* Importar estilos base del header y footer */
+@import url('header-footer.css');
+
+/* ----- VARIABLES DE ESTILO ----- */
+:root {
+    --azul-principal: #0fa49c;    /* Color principal (Turquesa) */
+    --color-secundario: #ffca1c;  /* Color de acento (Amarillo) */
+    --fondo-gris: #f4f7fb;        /* Fondo general de la página */
+    --fondo-tarjeta: #ffffff;     /* Fondo de contenedores principales */
+    --color-texto: #222;          /* Color de texto oscuro */
+    --color-hover: #0d8c85;       /* Color para efectos hover */
+}
+
+/* ----- RESET Y ESTILOS BASE ----- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family: "Segoe UI", sans-serif; 
 }
 
 body {
-    background: #f4f7fb;
+    background: var(--fondo-gris);
     min-height: 100vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Permite que el footer se quede abajo */
 }
 
-/* ----- HEADER ----- */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #007bff;
-    color: #fff;
-    height: 150PX;
+/* Enlaces generales */
+a { 
+    text-decoration: none; 
+    color: var(--azul-principal); 
 }
 
-.logo img {
-    width: 350px;
-    height: auto; /* mantiene proporciones */
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: opacity 0.3s;
-}
-
-nav a:hover,
-nav a.active {
-    opacity: 0.7;
-}
-
-/* ----- CONTENEDOR PRINCIPAL ----- */
+/* =====================
+   LAYOUT ASIMÉTRICO (GRID)
+===================== */
 .container {
     flex: 1;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    background: #fff;
+    /* Define 2 filas: 'auto' para el título, '1fr' para el mapa (ocupa el resto) */
+    grid-template-rows: auto 1fr;
+    /* Define 2 columnas: 2/3 para mapa y 1/3 para información */
+    grid-template-columns: 2fr 1fr; 
+    /* Asigna áreas: Título y Mapa a la izquierda, Info a la derecha */
+    grid-template-areas: 
+        "mapa-titulo info-cards"
+        "mapa-ubicacion info-cards";
+    gap: 0 30px; /* Elimina el gap vertical entre filas, mantiene el horizontal */
+    background: var(--fondo-tarjeta);
     margin: 40px auto;
-    padding: 40px;
+    padding: 30px; 
     border-radius: 16px;
     box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    max-width: 1100px;
+    max-width: 1200px;
     width: 90%;
 }
 
-/* Secciones */
-.section h2 {
-    margin-bottom: 20px;
-    color: #222;
+/* ----- ESTILOS PARA EL TÍTULO ----- */
+.mapa-titulo {
+    grid-area: mapa-titulo; 
+    color: var(--azul-principal);
+    font-size: 1.8em;
+    padding-bottom: 10px; 
+    border-bottom: 3px solid var(--color-secundario);
+    /* Ajuste final para compensar el gap vertical del Grid */
+    margin-bottom: 25px; 
 }
 
-/* ----- FORMULARIO ----- */
-.simple-form {
+/* ----- SECCIÓN DEL MAPA ----- */
+#mapa-ubicacion {
+    grid-area: mapa-ubicacion;
+    height: 100%; 
+    background: #e0e0e0; 
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+    padding: 0; 
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* Para apilar el mapa y el carrusel */
 }
 
-.simple-form input,
-.simple-form select {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    outline: none;
-    font-size: 15px;
-    transition: border 0.3s;
+/* Oculta el título duplicado que podría existir dentro del mapa */
+#mapa-ubicacion h2 {
+    display: none; 
 }
 
-.simple-form input:focus,
-.simple-form select:focus {
-    border-color: #007bff;
+/* Contenedor del mapa interactivo */
+#mapa-interactivo-div {
+    width: 100%;
+    flex-grow: 1; /* Hace que el mapa ocupe todo el espacio restante */
 }
 
-.simple-form button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.simple-form button:hover {
-    background: #0056b3;
-}
-
-/* ----- CONTACTO ----- */
-#contacto p {
-    margin: 10px 0;
-    font-size: 15px;
-    color: #444;
-}
-
-/* ----- FOOTER ----- */
-footer {
-    background: #007bff;
-    color: white;
+/* Placeholder para el mapa (en caso de error) */
+.mapa-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #666;
     text-align: center;
     padding: 20px;
-    margin-top: auto;
 }
 
-footer .redes-sociales {
-    margin-top: 10px;
+/* ----- SECCIÓN DE TARJETAS INFORMATIVAS ----- */
+.info-cards {
+    grid-area: info-cards; 
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
 
-footer .redes-sociales a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
+/* =====================
+   CARRUSEL DE SEDES SECUNDARIAS
+===================== */
+.carrusel-sedes-wrapper {
+    padding: 15px;
+    background-color: var(--fondo-tarjeta);
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.05);
+    flex-shrink: 0; /* Evita que el carrusel se encoja */
+}
+
+/* Título del carrusel */
+.carrusel-sedes-wrapper h3 {
+    font-size: 1.1em;
+    color: var(--azul-principal);
+    margin-bottom: 10px;
+}
+
+.carrusel-sedes-wrapper h3 i {
+    margin-right: 8px;
+    color: var(--color-secundario);
+}
+
+/* Contenedor del carrusel */
+.carrusel-sedes {
+    display: flex;
+    overflow-x: scroll; /* Permite el desplazamiento horizontal */
+    padding-bottom: 10px; 
+    gap: 15px;
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: thin; 
+}
+
+/* Estilos de la barra de desplazamiento para Webkit */
+.carrusel-sedes::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carrusel-sedes::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+/* ----- TARJETAS DE SEDES ----- */
+.sede-card {
+    flex-shrink: 0; /* Impide que la tarjeta se encoja */
+    width: 250px;
+    background-color: var(--fondo-tarjeta); 
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s, transform 0.3s;
+    cursor: default; 
+    border: 1px solid #ddd; 
+    overflow: hidden;
+    padding: 0; 
+}
+
+.sede-card:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+}
+
+/* Contenedor de la imagen de la sede */
+.sede-card-img-container {
+    width: 100%;
+    height: 120px; 
+    overflow: hidden;
+}
+
+.sede-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    transition: transform 0.3s ease;
+}
+
+.sede-card:hover .sede-card-img {
+    transform: scale(1.05);
+}
+
+/* Contenido de texto de la tarjeta de sede */
+.sede-card h4 {
+    margin: 10px 15px 5px 15px;
+    color: var(--azul-principal);
+    font-size: 1.1em;
+}
+
+.sede-card p {
+    font-size: 0.85em;
+    color: #555;
+    margin: 0 15px 5px 15px;
+    padding-bottom: 5px;
+}
+
+.sede-card p i {
+    color: var(--color-secundario);
+    margin-right: 5px;
+}
+
+/* =====================
+   TARJETAS DE INFORMACIÓN
+===================== */
+.tarjeta {
+    padding: 30px;
+    border-radius: 12px;
+    background: var(--fondo-tarjeta);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Títulos de las tarjetas */
+.tarjeta h3 {
+    margin-bottom: 15px;
+    color: var(--azul-principal);
+    font-size: 1.5em;
+    border-bottom: 3px solid var(--color-secundario);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.tarjeta h3 i { 
+    margin-right: 10px; 
+    color: var(--color-secundario); 
+}
+
+/* ----- TARJETA DE HORARIOS ----- */
+.horario-info .time-slot {
+    font-size: 1.8em;
     font-weight: bold;
-    transition: opacity 0.3s;
+    color: var(--color-secundario);
+    margin-top: 5px;
 }
 
-footer .redes-sociales a:hover {
-    opacity: 0.7;
+/* ----- TARJETA DE CONTACTO ----- */
+.contacto-info {
+    border-left: 5px solid var(--azul-principal);
 }
 
-/* ----- RESPONSIVE ----- */
-@media (max-width: 768px) {
+/* Items de información de contacto */
+.var-item {
+    margin-bottom: 20px;
+}
+
+/* Título de la variable (Ej: Teléfono Central) */
+.var-item span {
+    font-size: 0.9em;
+    color: #666;
+    font-weight: 500;
+    display: block; 
+    margin-bottom: 5px;
+}
+
+/* Valor de la variable (Ej: +56 9 1234 5678) */
+.var-value {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: var(--color-texto);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.var-value a {
+    color: var(--azul-principal);
+    transition: color 0.3s;
+}
+
+.var-value a:hover {
+    color: var(--color-hover);
+}
+
+/* Iconos dentro del var-value */
+.var-value i {
+    font-size: 1.3em;
+    color: var(--color-secundario);
+    margin-left: 10px; 
+}
+
+/* ----- ESTILOS PARA REDES SOCIALES ----- */
+.redes-var {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.redes-titulo {
+    font-size: 1.1em !important; 
+    font-weight: bold !important;
+    color: var(--azul-principal) !important;
+    margin-bottom: 10px !important;
+    display: block !important;
+}
+
+.redes-var .var-value {
+    justify-content: center; 
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.redes-var .var-value a {
+    font-size: 2em;
+    margin: 0;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.redes-var .var-value a:hover {
+    transform: scale(1.2);
+    color: var(--color-secundario);
+}
+
+/* =====================
+   BOTÓN FLOTANTE PARA PEDIR TURNO
+===================== */
+.btn-pedir-turno {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-secundario);
+    color: var(--color-fuente);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 100;
+}
+
+.btn-pedir-turno:hover {
+    background-color: #e5b600;
+    transform: scale(1.05);
+}
+
+/* =====================
+   DISEÑO RESPONSIVE
+===================== */
+@media (max-width: 900px) {
     .container {
-        grid-template-columns: 1fr;
-        text-align: center;
+        /* Reestructura el Grid a una sola columna vertical en móvil */
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr; 
+        grid-template-areas: 
+            "mapa-titulo"
+            "mapa-ubicacion"
+            "info-cards"; 
+        gap: 20px; /* Restaura el gap uniforme para mejor espaciado móvil */
+        padding: 20px;
     }
 
-    nav ul {
-        gap: 10px;
+    .mapa-titulo {
+        font-size: 1.5em;
+        padding-top: 5px;
+        /* Deshace el margen negativo para móvil */
+        margin-bottom: 0; 
     }
-
+    
+    #mapa-ubicacion {
+        /* Fija una altura para el mapa en móvil */
+        height: 550px; 
+        min-height: 400px;
+    }
+    
+    /* Ajuste de header para móviles */
     header {
-        padding: 10px 15px;
+        flex-direction: column;
+        height: auto;
+        padding: 15px 20px;
     }
 
-    .logo img {
-        width: 180px;
+    /* Botón flotante más pequeño en móviles */
+    .btn-pedir-turno {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+}
+
+/* Estilos para tablets */
+@media (max-width: 1024px) and (min-width: 901px) {
+    .container {
+        max-width: 95%;
+        gap: 0 20px;
+    }
+    
+    .sede-card {
+        width: 220px;
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        width: 95%;
+    }
+    
+    .mapa-titulo {
+        font-size: 1.3em;
+    }
+    
+    .tarjeta {
+        padding: 20px;
+    }
+    
+    .sede-card {
+        width: 200px;
+    }
+    
+    .carrusel-sedes-wrapper {
+        padding: 10px;
     }
 }

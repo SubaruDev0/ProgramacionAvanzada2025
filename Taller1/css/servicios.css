@@ -1,142 +1,176 @@
-/* ========== HEADER ========== */
-header {
+/* =====================
+   ARCHIVO: servicios.css
+   DESCRIPCIÓN: Estilos específicos para la página de servicios
+   FECHA: 2025
+===================== */
+
+/* Importar estilos base del header y footer */
+@import url('header-footer.css');
+
+/* ----- ESTILOS GENERALES DEL BODY ----- */
+body {
+    background: var(--fondo-claro);
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-    background: #007bff;
-    color: #fff;
-    height: 150px;
+    flex-direction: column;
 }
 
-.logo img {
-    width: 350px;
-    height: auto; /* mantiene proporciones */
+/* ----- CABECERA DE PÁGINA ----- */
+.page-header {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-claro) 100%);
+    color: white;
 }
 
-/* Menú de navegación */
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+/* Título principal de la página */
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-    transition: opacity 0.3s;
+/* Descripción de la página */
+.page-header p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-nav a:hover,
-nav a.active {
-    opacity: 0.7;
+/* ----- CONTENEDOR PRINCIPAL ----- */
+main {
+    flex: 1;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
-/* ========== GRID DE SERVICIOS ========== */
+/* =====================
+   GRID DE SERVICIOS
+===================== */
 .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
     margin: 40px 0;
-    padding: 0 20px;
 }
 
+/* ----- TARJETAS DE SERVICIOS ----- */
 .servicio-card {
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    padding: 20px 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    padding: 25px 20px;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-top: 4px solid var(--azul-principal);
 }
 
+/* Efecto hover en tarjetas de servicio */
 .servicio-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 6px 20px rgba(0,123,255,0.13);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(15, 164, 156, 0.15);
 }
 
+/* Imágenes de los servicios */
 .servicio-card img {
-    width: 200px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10%;
-    margin-bottom: 12px;
-    border: 2px solid #007bff;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 2px solid var(--azul-claro);
 }
 
+/* Títulos de los servicios */
 .servicio-card h3 {
-    margin-bottom: 8px;
-    color: #007bff;
-    font-size: 18px;
+    margin-bottom: 12px;
+    color: var(--azul-principal);
+    font-size: 1.4rem;
 }
-/* ----- FOOTER ----- */
-footer {
-    background: #007bff;
+
+/* Descripción de los servicios */
+.servicio-card p {
+    margin-bottom: 20px;
+    color: var(--color-fuente);
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+/* ----- BOTÓN DE INFORMACIÓN ----- */
+.btn-info {
+    background-color: var(--azul-principal);
     color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: auto;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
 }
 
-footer .redes-sociales {
-    margin-top: 10px;
+.btn-info:hover {
+    background-color: var(--color-hover);
 }
 
-footer .redes-sociales a {
-    margin: 0 10px;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: opacity 0.3s;
-}
-
-footer .redes-sociales a:hover {
-    opacity: 0.7;
-}
-
-/* ----- RESPONSIVE ----- */
-@media (max-width: 768px) {
-    nav ul {
-        gap: 10px;
-    }
-
-    header {
-        padding: 10px 15px;
-    }
-
-    .logo img {
-        width: 180px;
-    }
-}
-
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
+/* ----- BOTÓN FLOTANTE PARA PEDIR TURNO ----- */
 .btn-contacto {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #085fe2;
-    color: #fff;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--color-secundario);
+    color: var(--color-fuente);
     border: none;
-    border-radius: 10px;
-    padding: 15px 20px;
+    border-radius: 50px;
+    padding: 15px 25px;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: background-color 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 100;
 }
 
 .btn-contacto:hover {
-    background-color: #2980b9;
+    background-color: #e5b600;
+    transform: scale(1.05);
+}
+
+/* ----- DISEÑO RESPONSIVE ----- */
+@media (max-width: 768px) {
+    /* Ajustes para móviles en cabecera */
+    .page-header {
+        padding: 30px 15px;
+    }
     
+    .page-header h1 {
+        font-size: 2rem;
+    }
+    
+    .page-header p {
+        font-size: 1rem;
+    }
+    
+    /* Ajustes para móviles en contenido principal */
+    main {
+        padding: 20px 15px;
+    }
+    
+    /* Una columna en móviles */
+    .servicios-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* Botón más pequeño en móviles */
+    .btn-contacto {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
 }

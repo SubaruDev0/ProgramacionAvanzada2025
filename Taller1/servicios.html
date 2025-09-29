@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Dental - Servicios</title>
+    
+    <!-- Enlaces a hojas de estilo -->
+    <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/servicios.css">
 </head>
 <body>
-    <!-- Encabezado -->
+    <!-- =====================
+         ENCABEZADO DE PÁGINA
+    ===================== -->
     <header>
+        <!-- Logo de la clínica -->
         <div class="logo">
             <img src="img/logo.png" alt="Clínica Dental Logo">
         </div>
+        
+        <!-- Menú de navegación principal -->
         <nav>
             <ul>
                 <li><a href="inicio.html">Inicio</a></li>
@@ -23,35 +32,96 @@
         </nav>
     </header>
 
-    <!-- Sección de Servicios -->
+    <!-- =====================
+         CONTENIDO PRINCIPAL
+    ===================== -->
     <main>
+        <!-- Cabecera de la página de servicios -->
+        <div class="page-header">
+            <h1>Nuestros Servicios</h1>
+            <p>Ofrecemos una amplia gama de tratamientos dentales para cuidar tu salud bucal</p>
+        </div>
+        
+        <!-- Grid de servicios -->
         <section id="servicios" class="servicios-grid">
+            <!-- Servicio: Odontología general -->
             <div class="servicio-card">
                 <img src="img/odontologia.jpg" alt="Odontología general">
                 <h3>Odontología general</h3>
                 <p>Revisiones, limpiezas y tratamientos básicos para mantener tu salud bucal.</p>
+                <button class="btn-info">Más información</button>
             </div>
+            
+            <!-- Servicio: Ortodoncia -->
             <div class="servicio-card">
                 <img src="img/Implante.jpeg" alt="Ortodoncia">
                 <h3>Ortodoncia</h3>
                 <p>Corrección de la posición de los dientes y la mordida con brackets o alineadores.</p>
+                <button class="btn-info">Más información</button>
             </div>
+            
+            <!-- Servicio: Implantes dentales -->
             <div class="servicio-card">
-                <img src="img/implantes.jpg" alt="Implantes dentales">
+                <img src="img/implante.jpeg" alt="Implantes dentales">
                 <h3>Implantes dentales</h3>
                 <p>Reemplazo de piezas dentales perdidas con implantes de alta calidad.</p>
+                <button class="btn-info">Más información</button>
             </div>
+            
+            <!-- Servicio: Blanqueamiento -->
             <div class="servicio-card">
-                <img src="img/blanqueamiento.jpg" alt="Blanqueamiento">
+                <img src="img/implante.jpeg" alt="Blanqueamiento">
                 <h3>Blanqueamiento</h3>
                 <p>Tratamientos para aclarar el color de tus dientes y mejorar tu sonrisa.</p>
+                <button class="btn-info">Más información</button>
+            </div>
+            
+            <!-- Servicio: Limpieza dental -->
+            <div class="servicio-card">
+                <img src="img/implante.jpeg" alt="Limpieza dental">
+                <h3>Limpieza dental</h3>
+                <p>Eliminación de placa y sarro para prevenir caries y enfermedades periodontales.</p>
+                <button class="btn-info">Más información</button>
+            </div>
+            
+            <!-- Servicio: Endodoncia -->
+            <div class="servicio-card">
+                <img src="img/implante.jpeg" alt="Endodoncia">
+                <h3>Endodoncia</h3>
+                <p>Tratamiento de conductos para salvar dientes con caries profundas o infecciones.</p>
+                <button class="btn-info">Más información</button>
+            </div>
+            
+            <!-- Servicio: Periodoncia -->
+            <div class="servicio-card">
+                <img src="img/implante.jpeg" alt="Periodoncia">
+                <h3>Periodoncia</h3>
+                <p>Tratamiento especializado para enfermedades de las encías y tejidos de soporte.</p>
+                <button class="btn-info">Más información</button>
+            </div>
+            
+            <!-- Servicio: Odontopediatría -->
+            <div class="servicio-card">
+                <img src="img/implante.jpeg" alt="Odontopediatría">
+                <h3>Odontopediatría</h3>
+                <p>Atención dental especializada para niños y adolescentes.</p>
+                <button class="btn-info">Más información</button>
+            </div>
+            
+            <!-- Servicio: Prótesis dentales -->
+            <div class="servicio-card">
+                <img src="img/implante.jpeg" alt="Prótesis dentales">
+                <h3>Prótesis dentales</h3>
+                <p>Diseño y colocación de prótesis fijas y removibles para recuperar tu sonrisa.</p>
+                <button class="btn-info">Más información</button>
             </div>
         </section>
     </main>
 
-
-    <!-- Pie de página -->
- <footer>
+    <!-- =====================
+         PIE DE PÁGINA
+    ===================== -->
+    <footer>
         <p>&copy; 2025 Clínica Dental. Todos los derechos reservados.</p>
         <!-- Redes sociales -->
         <div class="redes-sociales">
@@ -60,14 +130,19 @@
         </div>
     </footer>
 
+    <!-- =====================
+         BOTÓN FLOTANTE PARA PEDIR TURNO
+    ===================== -->
     <button class="btn-contacto" onclick="irAContacto()">Pedir Turno</button>
 
-<script>
-    // Función JavaScript para redirigir
-    function irAContacto() {
-      window.location.href = "pedirTurno.html";
-    }
-  </script>
-
+    <!-- =====================
+         SCRIPT PARA REDIRECCIÓN
+    ===================== -->
+    <script>
+        // Función JavaScript para redirigir a la página de pedir turno
+        function irAContacto() {
+            window.location.href = "pedirTurno.html";
+        }
+    </script>
 </body>
 </html>

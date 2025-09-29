@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Meta charset para usar UTF-8 -->
+    <!-- Configuración básica del documento -->
     <meta charset="UTF-8">
-    <!-- Configuración de viewport para responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clínica Dental - Inicio</title>
-    <!-- Enlace al CSS externo -->
+    
+    <!-- Enlaces a hojas de estilo -->
+    <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/inicio.css">
 </head>
 <body>
     <!-- =====================
-         HEADER
+         ENCABEZADO DE PÁGINA
     ===================== -->
     <header>
         <!-- Logo de la clínica -->
@@ -19,10 +20,10 @@
             <img src="img/logo.png" alt="Clínica Dental Logo">
         </div>
 
-        <!-- Menú de navegación -->
+        <!-- Menú de navegación principal -->
         <nav>
             <ul>
-                <li><a href="inicio.html">Inicio</a></li>
+                <li><a href="inicio.html" class="active">Inicio</a></li>
                 <li><a href="servicios.html">Servicios</a></li>
                 <li><a href="equipo.html">Equipo</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
@@ -30,6 +31,7 @@
             </ul>
         </nav>
     </header>
+
     <!-- =====================
          BANNER PRINCIPAL
     ===================== -->
@@ -41,107 +43,72 @@
         <div class="banner-text">
             <h1>Bienvenidos a nuestra Clínica Dental</h1>
             <p>Los mejores tratamientos para tu salud bucal</p>
+            <!-- Botón call-to-action -->
+            <button class="btn-banner" onclick="window.location.href='pedirTurno.html'">Solicitar Cita</button>
         </div>
     </section>
 
     <!-- =====================
-         SECCIÓN DE SERVICIOS
+         SECCIÓN DE SERVICIOS DESTACADOS
     ===================== -->
     <section id="servicios">
-    <!-- Título de la sección -->
-    <h2 class="section-title">Nuestros Servicios</h2>
+        <!-- Título de la sección -->
+        <h2 class="section-title">Nuestros Servicios</h2>
 
-    <!-- Contenedor del carrusel con botones -->
-    <div class="carousel-wrapper">
-        <!-- Botón izquierdo del carrusel -->
-        <button class="carousel-btn left-btn">&#10094;</button>
+        <!-- Contenedor del carrusel con botones -->
+        <div class="carousel-wrapper">
+            <!-- Botón izquierdo del carrusel -->
+            <button class="carousel-btn left-btn">&#10094;</button>
 
-        <!-- Carrusel de servicios -->
-        <div class="carousel">
-            <!-- Odontología general -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Odontología General</h3>
-                <p>Atención integral para el cuidado de tu salud bucal.</p>
+            <!-- Carrusel de servicios -->
+            <div class="carousel">
+                <!-- Servicio: Odontología general -->
+                <div class="servicio">
+                    <img src="img/Implante.jpeg" alt="Odontología General">
+                    <h3>Odontología General</h3>
+                    <p>Atención integral para el cuidado de tu salud bucal.</p>
+                </div>
+                <!-- Servicio: Ortodoncia -->
+                <div class="servicio">
+                    <img src="img/Implante.jpeg" alt="Ortodoncia">
+                    <h3>Ortodoncia</h3>
+                    <p>Alinea tus dientes y mejora tu sonrisa.</p>
+                </div>
+                <!-- Servicio: Implantes -->
+                <div class="servicio">
+                    <img src="img/Implante.jpeg" alt="Implantes Dentales">
+                    <h3>Implantes Dentales</h3>
+                    <p>Solución permanente para reemplazar dientes perdidos.</p>
+                </div>
+                <!-- Servicio: Endodoncia -->
+                <div class="servicio">
+                    <img src="img/Implante.jpeg" alt="Endodoncia">
+                    <h3>Endodoncia</h3>
+                    <p>Tratamiento de conductos para salvar tus piezas dentales.</p>
+                </div>
+                <!-- Servicio: Periodoncia -->
+                <div class="servicio">
+                    <img src="img/Implante.jpeg" alt="Periodoncia">
+                    <h3>Periodoncia</h3>
+                    <p>Cuidado y tratamiento especializado de encías.</p>
+                </div>
+                <!-- Servicio: Rehabilitación oral -->
+                <div class="servicio">
+                    <img src="img/Implante.jpeg" alt="Rehabilitación Oral">
+                    <h3>Rehabilitación Oral</h3>
+                    <p>Recupera la función y estética de tu sonrisa.</p>
+                </div>
             </div>
-            <!-- Ortodoncia -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Ortodoncia">
-                <h3>Ortodoncia</h3>
-                <p>Alinea tus dientes y mejora tu sonrisa.</p>
-            </div>
-            <!-- Implantes -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Implantes Dentales</h3>
-                <p>Solución permanente para reemplazar dientes perdidos.</p>
-            </div>
-            <!-- Endodoncia -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Endodoncia</h3>
-                <p>Tratamiento de conductos para salvar tus piezas dentales.</p>
-            </div>
-            <!-- Periodoncia -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Periodoncia</h3>
-                <p>Cuidado y tratamiento especializado de encías.</p>
-            </div>
-            <!-- Rehabilitación oral -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Rehabilitación Oral</h3>
-                <p>Recupera la función y estética de tu sonrisa.</p>
-            </div>
-            <!-- Estética dental -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Estética Dental</h3>
-                <p>Blanqueamiento y carillas para una sonrisa perfecta.</p>
-            </div>
-            <!-- Prótesis -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Prótesis Dentales</h3>
-                <p>Recupera dientes con soluciones removibles o fijas.</p>
-            </div>
-            <!-- Cirugía oral -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Cirugía Oral</h3>
-                <p>Extracciones y procedimientos quirúrgicos especializados.</p>
-            </div>
-            <!-- Odontopediatría -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Odontopediatría</h3>
-                <p>Atención dental especializada para niños.</p>
-            </div>
-            <!-- Urgencias -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Urgencias Dentales</h3>
-                <p>Atención inmediata para emergencias odontológicas.</p>
-            </div>
-            <!-- Limpieza -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Limpieza Dental</h3>
-                <p>Elimina placa, sarro y previene caries.</p>
-            </div>
-            <!-- Radiografías -->
-            <div class="servicio">
-                <img src="img/Implante.jpeg" alt="Odontología General">
-                <h3>Radiografías y Diagnóstico</h3>
-                <p>Imágenes precisas para un tratamiento efectivo.</p>
-            </div>
+
+            <!-- Botón derecho del carrusel -->
+            <button class="carousel-btn right-btn">&#10095;</button>
         </div>
-
-        <!-- Botón derecho del carrusel -->
-        <button class="carousel-btn right-btn">&#10095;</button>
-    </div>
-</section>
+        
+        <!-- Botón para ver todos los servicios -->
+        <div class="ver-mas-container">
+            <button class="btn-ver-mas" onclick="window.location.href='servicios.html'">Ver Todos los Servicios</button>
+        </div>
+    </section>
 
     <!-- =====================
          SECCIÓN DE TESTIMONIOS
@@ -151,19 +118,21 @@
 
         <!-- Grid de testimonios -->
         <div class="testimonios-grid">
-            <!-- Cada testimonio tiene cita, autor, estrellas y servicio -->
+            <!-- Testimonio 1 -->
             <div class="testimonio">
                 <p>"Excelente atención y resultados. Muy recomendados."</p>
                 <p>- Juan Pérez</p>
                 <p>⭐⭐⭐⭐⭐</p>
                 <p>Servicio: Ortodoncia</p>
             </div>
+            <!-- Testimonio 2 -->
             <div class="testimonio">
                 <p>"Profesionales y amables. Me hicieron sentir muy cómoda."</p>
                 <p>- Rosa López</p>
                 <p>⭐⭐⭐⭐</p>
                 <p>Servicio: Blanqueamiento</p>
             </div>
+            <!-- Testimonio 3 -->
             <div class="testimonio">
                 <p>"El tratamiento de implantes fue impecable."</p>
                 <p>- Luis Fernández</p>
@@ -174,7 +143,7 @@
     </section>
 
     <!-- =====================
-         FOOTER
+         PIE DE PÁGINA
     ===================== -->
     <footer>
         <p>&copy; 2025 Clínica Dental. Todos los derechos reservados.</p>
@@ -185,10 +154,10 @@
         </div>
     </footer>
 
-    <!-- Botón fijo para volver al inicio de la página -->
+    <!-- =====================
+         BOTÓN VOLVER ARRIBA
+    ===================== -->
     <button id="btn-top" style="display: none;">Volver Arriba</button>
-
-
 
     <!-- Script para funcionalidad del carrusel -->
     <script src="js/carrusel.js"></script>

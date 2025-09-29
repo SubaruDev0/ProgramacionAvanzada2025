@@ -1,0 +1,117 @@
+/* =====================
+   ARCHIVO: header-footer.css
+   DESCRIPCIÓN: Estilos unificados para header y footer en todas las páginas
+   FECHA: 2025
+===================== */
+
+/* ----- VARIABLES DE COLOR BASADAS EN EL LOGIN ----- */
+:root {
+    --azul-principal: #0fa49c;      /* Color azul principal del login */
+    --azul-claro: #087872;          /* Color azul claro para fondos */
+    --color-secundario: #ffca1c;    /* Color amarillo para acentos */
+    --fondo-claro: #f0f9f8;         /* Fondo claro para páginas */
+    --fondo-tarjeta: #ffffff;       /* Fondo blanco para tarjetas */
+    --color-fuente: #333333;        /* Color principal de texto */
+    --color-hover: #0d8c85;         /* Color para efectos hover */
+}
+
+/* ----- RESET Y ESTILOS BASE ----- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ----- ESTILOS DEL HEADER ----- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: var(--azul-principal);
+    color: #fff;
+    height: 120px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo de la clínica */
+.logo img {
+    width: 300px;
+    height: auto;
+}
+
+/* Navegación principal */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Efecto hover y estado activo */
+nav a:hover,
+nav a.active {
+    background-color: var(--color-hover);
+}
+
+/* ----- ESTILOS DEL FOOTER ----- */
+footer {
+    background: var(--azul-principal);
+    color: white;
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: auto;
+}
+
+/* Contenedor de redes sociales */
+footer .redes-sociales {
+    margin-top: 12px;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+}
+
+/* Enlaces de redes sociales */
+footer .redes-sociales a {
+    text-decoration: none;
+    color: #f5f7fa;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+footer .redes-sociales a:hover {
+    color: var(--color-secundario);
+}
+
+/* ----- DISEÑO RESPONSIVE ----- */
+@media (max-width: 768px) {
+    /* Header en columna para móviles */
+    header {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    /* Logo más pequeño en móviles */
+    .logo img {
+        width: 200px;
+    }
+
+    /* Menú en múltiples líneas */
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+}
