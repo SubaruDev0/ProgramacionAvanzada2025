@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formulario con Validación de RUT</title>
+  <!-- =========================================================
+       BOOTSTRAP CSS
+       ========================================================= -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <!-- =========================================================
+             TARJETA DEL FORMULARIO
+             ========================================================= -->
+        <div class="card shadow-sm border-0">
+          <div class="card-body p-4">
+            <h1 class="h4 mb-2">Formulario de Registro</h1>
+            <p class="text-muted mb-4">Completa tus datos. Validaremos el RUT automáticamente </p>
+
+            <form id="formulario" novalidate>
+              <!-- =========================================================
+                   NOMBRE
+                   ========================================================= -->
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ej: Antonia Pérez" required>
+                <div class="invalid-feedback">Ingresa tu nombre.</div>
+              </div>
+
+              <!-- =========================================================
+                   CORREO
+                   ========================================================= -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="nombre@dominio.com" required>
+                <div class="invalid-feedback">Ingresa un correo válido.</div>
+              </div>
+
+              <!-- =========================================================
+                   RUT
+                   ========================================================= -->
+              <div class="mb-2">
+                <label for="rut" class="form-label">RUT</label>
+                <input type="text" id="rut" name="rut" class="form-control" placeholder="12.345.678-5" required>
+                <div class="form-text">Formato esperado: 12.345.678-5</div>
+                <div class="invalid-feedback" id="rutError">El RUT no es válido.</div>
+              </div>
+              <div class="mb-3">
+                <small id="dvHint" class="text-muted"></small>
+              </div>
+
+              <!-- BOTÓN -->
+              <button type="submit" class="btn btn-primary w-100">Enviar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       SCRIPT DE VALIDACIÓN DE RUT
+       ========================================================= -->
+  <script>
+  /* =========================================================
+     FUNCIONES DE UTILIDAD PARA EL RUT
+     ========================================================= */
+
+  // Limpia el RUT eliminando puntos, guiones y espacios
+  function limpiarRUT(valor) {
+    return (valor || "").toString().replace(/[.\s-]/g, "").toUpperCase();
+  }
+
+  // Agrega puntos de miles al cuerpo del RUT
+  function miles(cuerpo) {
+    let out = "", c = 0;
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+      out = cuerpo[i] + out;
+      c++;
+      if (c === 3 && i !== 0) {
+        out = "." + out;
+        c = 0;
+      }
+    }
+    return out;
+  }
+
+  // Calcula el dígito verificador (DV) usando el algoritmo módulo 11
+  function calcularDV(cuerpo) {
+    let suma = 0, multiplo = 2;
+    for (let i = cuerpo.length - 1; i >= 0; i--) {
+      suma += parseInt(cuerpo[i], 10) * multiplo;
+      multiplo = multiplo < 7 ? multiplo + 1 : 2;
+    }
+    const resto = 11 - (suma % 11);
+    if (resto === 11) return "0";
+    if (resto === 10) return "K";
+    return String(resto);
+  }
+
+  // Valida que el RUT completo (cuerpo+DV) sea correcto
+  function validarRUT(valor) {
+    const limpio = limpiarRUT(valor);
+    if (!/^\d+[0-9K]$/.test(limpio)) return false;
+    const cuerpo = limpio.slice(0, -1);
+    const dv = limpio.slice(-1);
+    if (cuerpo.length < 7) return false; // mínimo 7 dígitos
+    return calcularDV(cuerpo) === dv;
+  }
+
+  /* =========================================================
+     MANEJO DEL FORMULARIO Y EL CAMPO RUT
+     ========================================================= */
+  const form = document.getElementById("formulario");
+  const rutInput = document.getElementById("rut");
+  const rutError = document.getElementById("rutError");
+  const dvHint = document.getElementById("dvHint");
+
+  // Permite solo dígitos, guion y K/k
+  rutInput.addEventListener("beforeinput", (e) => {
+    if (e.data === null) return; // backspace, delete, etc.
+    if (!/[0-9\-kK]/.test(e.data)) e.preventDefault();
+  });
+
+  // Validación en vivo mientras se escribe
+  rutInput.addEventListener("input", () => {
+    let val = rutInput.value.toUpperCase().replace(/\s|\./g, ""); // quitar espacios y puntos
+    const teniaGuion = /-/.test(val);
+    val = val.replace(/-/g, ""); // quitar guiones temporales
+
+    // si ya tenía guion, lo ponemos al final
+    if (teniaGuion && val.length >= 2) {
+      val = val.slice(0, -1) + "-" + val.slice(-1);
+    }
+    rutInput.value = val;
+
+    // validamos el RUT si tiene al menos 2 caracteres
+    if (validarRUT(val)) {
+      rutInput.classList.add("is-valid");
+      rutInput.classList.remove("is-invalid");
+      rutError.textContent = "¡Se ve bien!";
+      dvHint.textContent = "";
+    } else {
+      rutInput.classList.remove("is-valid");
+      const limpio = limpiarRUT(val);
+      if (limpio.length >= 2) {
+        rutInput.classList.add("is-invalid");
+        rutError.textContent = "Revisa tu RUT.";
+        // mostramos sugerencia del DV correcto
+        const cuerpo = limpio.slice(0, -1);
+        if (/^\d+$/.test(cuerpo) && cuerpo.length >= 7) {
+          dvHint.textContent = `Sugerencia: debería terminar en “-${calcularDV(cuerpo)}”.`;
+        } else {
+          dvHint.textContent = "";
+        }
+      } else {
+        rutInput.classList.remove("is-invalid");
+        dvHint.textContent = "";
+      }
+    }
+  });
+
+  // Al salir del campo (blur): formateamos con puntos y guion
+  rutInput.addEventListener("blur", () => {
+    const limpio = limpiarRUT(rutInput.value);
+    if (limpio.length >= 2) {
+      const cuerpo = limpio.slice(0, -1);
+      const dv = limpio.slice(-1);
+      rutInput.value = `${miles(cuerpo)}-${dv}`;
+    }
+  });
+
+  // Validación final al enviar el formulario
+  form.addEventListener("submit", (e) => {
+    if (!form.checkValidity() || !validarRUT(rutInput.value)) {
+      e.preventDefault();
+      e.stopPropagation();
+      rutInput.classList.add("is-invalid");
+      rutError.textContent = "El RUT no es válido.";
+    }
+    form.classList.add("was-validated");
+  });
+  </script>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
