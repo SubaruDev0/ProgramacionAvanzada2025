@@ -1,0 +1,155 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* general */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+  padding-top: 90px; /* espacio para header fijo */
+  background: #ffffff;
+}
+
+/* header */
+.encabezado {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 2rem;
+  height: 90px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all .3s ease;
+}
+
+.logo img {
+  height: 60px;
+  width: auto;
+  transition: height .28s ease;
+}
+
+.encabezado.scroll {
+  height: 60px;
+  padding: 0 1.4rem;
+}
+.encabezado.scroll .logo img {
+  height: 40px;
+}
+
+/* Menú */
+.menu ul {
+  display: flex;
+  gap: 1.6rem;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+.menu ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background .18s ease, color .18s ease, transform .12s ease;
+}
+.menu ul li a:hover {
+  background: #4AAFD9;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Botón reservar */
+.reserva a {
+  display: inline-block;
+  background: #4AAFD9;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 9px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background .18s ease, color .18s ease;
+}
+
+.reserva a:hover {
+  background: #ea580c; /* color alternativo al pasar el mouse */
+  color: #fff;
+}
+
+/* Especialidades - detalle (lista con imagen a la derecha) */
+.especialidades-detalle {
+  background: #fff;
+  padding: 3rem 1rem;
+}
+.especialidades-detalle .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.seccion-titulo {
+  font-size: 2rem;
+  color: #0b2540;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* cada fila */
+.especialidad-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1.15rem;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #fbfdff, #ffffff);
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* efecto leve al pasar */
+.especialidad-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(16,24,40,0.08);
+}
+
+/* texto a la izquierda */
+.esp-texto {
+  flex: 1 1 60%;
+  padding-right: 1rem;
+}
+.esp-texto h3 {
+  margin: 0 0 .4rem 0;
+  font-size: 1.25rem;
+  color: #0b2540;
+  font-weight: 700;
+}
+.esp-texto p {
+  margin: 0;
+  color: #444;
+  line-height: 1.5;
+}
+
+/* imagen a la derecha */
+.esp-imagen {
+  flex: 0 0 320px;            /* ancho fijo para la imagen */
+  height: 180px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 8px 20px rgba(11,37,64,0.06);
+}
+
+/* Por si quiero agregar mas especialidades */
+.especialidad-item:last-child {
+  margin-bottom: 0;
+}
