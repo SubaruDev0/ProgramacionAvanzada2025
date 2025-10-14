@@ -5,6 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agendar Cita - Clínica Dental Sonrisa Familiar</title>
   <link rel="stylesheet" href="estilo.css">
+  <style>
+    /* Mensajes flotantes */
+    .mensaje {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #007acc;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      font-weight: 500;
+      display: none;
+      z-index: 1000;
+    }
+
+    .mensaje.error {
+      background-color: #e74c3c;
+    }
+
+    .mensaje.exito {
+      background-color: #2ecc71;
+    }
+  </style>
 </head>
 <body>
   <header>Agendar Cita - Clínica Dental Sonrisa Familiar</header>
@@ -16,7 +40,7 @@
     </p>
 
     <section class="form-section">
-      <form class="form">
+      <form class="form" id="formCita">
         <label for="nombre">Nombre completo:</label>
         <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
 
@@ -59,5 +83,87 @@
       <a href="menu.html" class="btn">Volver al Menú</a>
     </div>
   </main>
+
+  <!-- Mensaje flotante -->
+  <div id="mensaje" class="mensaje"></div>
+
+  <script>
+    const fechaInput = document.getElementById('fecha');
+    const mensajeDiv = document.getElementById('mensaje');
+    const form = document.getElementById('formCita');
+
+    // Evitar fechas pasadas
+    (function setMinDate() {
+      const hoy = new Date();
+      const yyyy = hoy.getFullYear();
+      const mm = String(hoy.getMonth() + 1).padStart(2, '0');
+      const dd = String(hoy.getDate()).padStart(2, '0');
+      const fechaMinima = `${yyyy}-${mm}-${dd}`;
+      fechaInput.setAttribute('min', fechaMinima);
+    })();
+
+    // Mostrar mensajes flotantes
+    function mostrarMensaje(texto, tipo = "exito") {
+      mensajeDiv.textContent = texto;
+      mensajeDiv.className = `mensaje ${tipo}`;
+      mensajeDiv.style.display = "block";
+      clearTimeout(mostrarMensaje._timeout);
+      mostrarMensaje._timeout = setTimeout(() => {
+        mensajeDiv.style.display = "none";
+      }, 3000);
+    }
+
+    // Convierte 'YYYY-MM-DD' a Date local sin desplazamiento UTC
+    function fechaStringALocalDate(fechaStr) {
+      // fechaStr formato: 'YYYY-MM-DD'
+      const parts = fechaStr.split('-').map(Number);
+      if (parts.length !== 3) return null;
+      const [y, m, d] = parts;
+      // new Date(year, monthIndex, day) -> mes indexado desde 0
+      return new Date(y, m - 1, d);
+    }
+
+    // Validar domingos correctamente (usando fecha construida localmente)
+    fechaInput.addEventListener('input', () => {
+      const val = fechaInput.value;
+      if (!val) return;
+      const fechaSeleccionada = fechaStringALocalDate(val);
+      if (!fechaSeleccionada) return;
+      const diaSemana = fechaSeleccionada.getDay(); // 0 = Domingo
+      if (diaSemana === 0) {
+        mostrarMensaje("🚫 No se pueden agendar citas los domingos.", "error");
+        fechaInput.value = "";
+      }
+    });
+
+    // Manejar envío del formulario
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      // Validaciones básicas
+      if (!fechaInput.value) {
+        mostrarMensaje("⚠️ Por favor selecciona una fecha válida.", "error");
+        return;
+      }
+      const fechaSeleccionada = fechaStringALocalDate(fechaInput.value);
+      if (!fechaSeleccionada) {
+        mostrarMensaje("⚠️ Fecha inválida.", "error");
+        return;
+      }
+      // Re-check domingo a la hora de enviar (defensa extra)
+      if (fechaSeleccionada.getDay() === 0) {
+        mostrarMensaje("🚫 No se pueden agendar citas los domingos.", "error");
+        return;
+      }
+
+      // Si todo ok => mostrar éxito
+      mostrarMensaje("✅ Cita agendada con éxito.", "exito");
+
+      // Limpiar formulario después de 1.5s para que user vea el resumen si quiere
+      setTimeout(() => {
+        form.reset();
+      }, 1500);
+    });
+  </script>
 </body>
 </html>
