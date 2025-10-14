@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - Clínica Dental Sonrisa Familiar</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>Contacto - Clínica Dental Sonrisa Familiar</header>
+
+  <main>
+    <h2 style="text-align:center; margin-top:20px; color:#007acc;">Contáctanos</h2>
+    <p style="text-align:center; color:#444; margin-bottom:30px;">
+      Si tienes dudas o necesitas información adicional, completa el siguiente formulario y te responderemos pronto.
+    </p>
+
+    <section class="form-section">
+      <form class="form">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: María González" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="Ej: maria@email.com" required>
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="Ej: +56 9 1234 5678">
+
+        <label for="mensaje">Mensaje o consulta:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+        <button type="submit" class="btn">Enviar Consulta</button>
+      </form>
+    </section>
+
+    <div style="text-align:center; margin-top: 40px;">
+      <a href="menu.html" class="btn">Volver al Menú</a>
+    </div>
+  </main>
+</body>
+</html>

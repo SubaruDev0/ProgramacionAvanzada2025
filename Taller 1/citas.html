@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendar Cita - Clínica Dental Sonrisa Familiar</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>Agendar Cita - Clínica Dental Sonrisa Familiar</header>
+
+  <main>
+    <h2 style="text-align:center; margin-top:20px; color:#007acc;">Reserva tu Cita</h2>
+    <p style="text-align:center; color:#444; margin-bottom:30px;">
+      Elige el día, hora y tratamiento para tu próxima cita con nosotros.
+    </p>
+
+    <section class="form-section">
+      <form class="form">
+        <label for="nombre">Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required>
+
+        <label for="correo">Correo electrónico:</label>
+        <input type="email" id="correo" name="correo" placeholder="Ej: juan@email.com" required>
+
+        <label for="tratamiento">Tratamiento:</label>
+        <select id="tratamiento" name="tratamiento" required>
+          <option value="">Seleccione un tratamiento</option>
+          <option value="consulta">Consulta General - $15.000 CLP</option>
+          <option value="limpieza">Limpieza Dental - $25.000 CLP</option>
+          <option value="caries">Obturación de Caries - $30.000 CLP</option>
+          <option value="endodoncia">Endodoncia - $60.000 CLP</option>
+          <option value="extraccion">Extracción Dental - $35.000 CLP</option>
+        </select>
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required>
+
+        <label for="hora">Hora:</label>
+        <select id="hora" name="hora" required>
+          <option value="">Seleccione una hora</option>
+          <option>14:30</option>
+          <option>15:00</option>
+          <option>15:30</option>
+          <option>16:00</option>
+          <option>16:30</option>
+          <option>17:00</option>
+          <option>17:30</option>
+          <option>18:00</option>
+          <option>18:30</option>
+          <option>19:00</option>
+        </select>
+
+        <button type="submit" class="btn">Confirmar Cita</button>
+      </form>
+    </section>
+
+    <div style="text-align:center; margin-top: 40px;">
+      <a href="menu.html" class="btn">Volver al Menú</a>
+    </div>
+  </main>
+</body>
+</html>
