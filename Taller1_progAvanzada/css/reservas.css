@@ -65,10 +65,11 @@ body {
   transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
 }
 .menu ul li a:hover {
-  background-color: #ea580c;
+  background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
   color: #fff;
   transform: translateY(-2px);
 }
+
 
 /* Botón reservar */
 .reserva a {
@@ -80,10 +81,11 @@ body {
   font-weight: 700;
   text-decoration: none;
   transition: background 0.18s ease, color 0.18s ease;
+  
 }
 
 .reserva a:hover {
-  background: #ea580c; /* color alternativo al pasar el mouse */
+  background: #0d47a1; /* color alternativo al pasar el mouse */
   color: #fff;
 }
 /* ====== RESERVAS PAGE ====== */
@@ -368,7 +370,7 @@ body {
 .btn-enviar:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
-  background: #ea580c;
+  background: #0d47a1;
 }
 
 .btn-reservar {
@@ -389,7 +391,7 @@ body {
 }
 
 .btn-reservar:hover {
-  background: #ea580c;
+  background: #0d47a1;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }

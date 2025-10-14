@@ -65,9 +65,9 @@ body {
   transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
 }
 .menu ul li a:hover {
-  background-color: #ea580c;
-  color: #fff;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Botón reservar */
@@ -83,7 +83,7 @@ body {
 }
 
 .reserva a:hover {
-  background: #ea580c; /* color alternativo al pasar el mouse */
+  background: #0d47a1; /* color alternativo al pasar el mouse */
   color: #fff;
 }
 /* ====== HERO ====== */
@@ -316,7 +316,7 @@ body {
 }
 
 .btn-secundario:hover {
-  background: #ea580c;
+  background: #0d47a1;
   color: white;
   border: none;
 }

@@ -11,9 +11,9 @@
 /* general */
 body {
   font-family: "Montserrat", sans-serif;
-  color: #222;
-  padding-top: 90px; /* espacio para header fijo */
-  background: #ffffff;
+  color: #333;
+  padding-top: 90px;
+  background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
 }
 
 /* header*/
@@ -83,9 +83,10 @@ body {
 }
 
 .reserva a:hover {
-  background: #ea580c; /* color alternativo al pasar el mouse */
+  background: linear-gradient(135deg, #0d47a1 0%, #1a73e8 100%);
   color: #fff;
 }
+
 /* ====== EQUIPO PAGE ====== */
 .main-equipo {
   max-width: 1200px;
@@ -302,7 +303,7 @@ body {
 }
 
 .btn-reservar:hover {
-  background-color: #ea580c;
+  background-color: #0d47a1;
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -334,6 +335,7 @@ body {
   }
 }
 
+/* === FOOTER === */
 /* === FOOTER === */
 .footer {
   background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);

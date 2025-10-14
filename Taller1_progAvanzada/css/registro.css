@@ -1,20 +1,92 @@
-/* ===== ESTILOS GENERALES ===== */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+
+/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ===== BODY ===== */
 body {
     font-family: 'Montserrat', sans-serif;
     background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
-    min-height: 100vh;
+    padding-top: 90px; /* espacio para header fijo */
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 20px;
+    min-height: 100vh;
 }
 
+/* ===== HEADER ===== */
+.encabezado {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    height: 90px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+.logo img {
+    height: 60px;
+    width: auto;
+    transition: height 0.28s ease;
+}
+.encabezado.scroll {
+    height: 60px;
+    padding: 0 1.4rem;
+}
+.encabezado.scroll .logo img {
+    height: 40px;
+}
+
+/* ===== MENÚ ===== */
+.menu ul {
+    display: flex;
+    gap: 1.6rem;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.12s ease;
+}
+.menu ul li a:hover {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ===== BOTÓN RESERVA ===== */
+.reserva a {
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    border-radius: 9px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    background: #1a73e8;
+    padding: 10px 18px;
+}
+.reserva a:hover {
+    background: #0d47a1;
+}
+
+/* ===== LOGIN ===== */
 .login-container {
     background-color: white;
     border-radius: 12px;
@@ -22,6 +94,7 @@ body {
     width: 100%;
     max-width: 450px;
     overflow: hidden;
+    margin: 40px auto;
 }
 
 .login-header {
@@ -51,7 +124,6 @@ body {
     padding: 30px;
 }
 
-/* ===== ESTILOS DE FORMULARIOS ===== */
 .form-group {
     margin-bottom: 20px;
 }
@@ -85,78 +157,7 @@ body {
     font-size: 13px;
 }
 
-/* ===== ESTILOS ESPECÍFICOS PARA REGISTRO ===== */
-.form-row {
-    display: flex;
-    gap: 15px;
-}
-
-.half-width {
-    flex: 1;
-}
-
-.password-requirements {
-    margin-top: 5px;
-    font-size: 12px;
-    color: #666;
-}
-
-.password-match {
-    margin-top: 5px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.password-match.valid {
-    color: #4caf50;
-}
-
-.password-match.invalid {
-    color: #f44336;
-}
-
-/* ===== ESTILOS DE OPCIONES Y BOTONES ===== */
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    font-size: 14px;
-}
-
-.remember-me {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-}
-
-.remember-me input {
-    margin-right: 8px;
-    width: auto;
-}
-
-.terms-link {
-    color: #1a73e8;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.terms-link:hover {
-    color: #0d47a1;
-    text-decoration: underline;
-}
-
-.forgot-password {
-    color: #1a73e8;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.forgot-password:hover {
-    color: #0d47a1;
-    text-decoration: underline;
-}
-
+/* ===== BOTONES LOGIN ===== */
 .login-btn {
     width: 100%;
     padding: 14px;
@@ -168,7 +169,6 @@ body {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    font-family: 'Montserrat', sans-serif;
 }
 
 .login-btn:hover {
@@ -176,76 +176,102 @@ body {
     box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
 }
 
-/* ===== ESTILOS DE ENLACES Y MENSAJES ===== */
-.register-link {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 14px;
-    color: #666;
+/* ===== FOOTER ===== */
+/* === FOOTER === */
+.footer {
+  background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+  color: #ffffff;
+  padding: 3rem 1rem 1rem 1rem;
+  font-family: "Montserrat", sans-serif;
 }
 
-.register-link a {
-    color: #1a73e8;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
-    display: inline-flex;
-    align-items: center;
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  align-items: flex-start;
 }
 
-.register-link a:hover {
-    color: #0d47a1;
-    text-decoration: underline;
+.footer-logo img {
+  width: 140px;
+  height: auto;
 }
 
-.confirmation-message {
-    padding: 30px;
-    text-align: center;
+.footer-info h4,
+.footer-links h4,
+.footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+  font-weight: 700;
 }
 
-.message-icon {
-    font-size: 50px;
-    color: #4caf50;
-    margin-bottom: 20px;
+.footer-info p,
+.footer-links ul li,
+.footer-social .social-icons a {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.confirmation-message h3 {
-    color: #333;
-    margin-bottom: 15px;
-    font-weight: 700;
+.footer-links ul {
+  list-style: none;
+  padding: 0;
 }
 
-.confirmation-message p {
-    color: #666;
-    margin-bottom: 25px;
-    line-height: 1.5;
+.footer-links ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.2s ease;
 }
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 480px) {
-    .login-container {
-        max-width: 100%;
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-social .social-icons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social .social-icons a {
+  font-size: 1.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-social .social-icons a:hover {
+  transform: scale(1.3);
+}
+
+/* Footer bottom */
+.footer-bottom {
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ===== RESPONSIVE HEADER ===== */
+@media (max-width: 768px) {
+    .encabezado {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 1rem;
+        gap: 10px;
     }
-    
-    .login-header, .login-form {
-        padding: 20px;
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
     }
-    
-    .form-options {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .forgot-password {
-        margin-top: 10px;
-    }
-    
-    .form-row {
-        flex-direction: column;
-        gap: 0;
-    }
-    
-    .half-width {
-        width: 100%;
+
+    .reserva a {
+        padding: 8px 14px;
+        font-size: 14px;
     }
 }
