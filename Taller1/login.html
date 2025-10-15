@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login – Clínica Dental</title>
+  <link rel="stylesheet" href="./styles.css?v=4">
+</head>
+<body>
+
+  <!-- HEADER con botón Volver al inicio -->
+  <header class="header header-rounded">
+    <nav class="nav nav--simple">
+      <div class="title">Clínica Dental</div>
+      <!-- Este botón vuelve al INICIO -->
+      <a class="cta-dark" href="index.html">Volver</a>
+    </nav>
+  </header>
+
+  <!-- =========================
+       LOGIN HERO con fondo difuminado
+       ========================= -->
+  <main class="login-hero" style="--login-bg: url('Imagen/Principal/Fondo_Login.jpg');">
+
+    <!-- Contenido del formulario -->
+    <section class="section login-section">
+      <h1>Iniciar sesión</h1>
+
+      <div class="login-box">
+        <form method="get" action="index.html" autocomplete="on">
+          <!-- Usuario -->
+          <label for="usuario">Usuario</label>
+          <input id="usuario" name="usuario" type="text" placeholder="Ingresa tu usuario" required>
+
+          <!-- Contraseña -->
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required>
+
+          <!-- Botón de inicio de sesión -->
+          <button type="submit" class="btn btn-full">Iniciar sesión</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2025 Clínica Dental</div>
+  </footer>
+
+</body>
+</html>
