@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Formulario de Registro</title>
+
+  <!-- =========================================================
+       FRAMEWORK: Pico.css (ligero)
+       ========================================================= -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@2/css/pico.min.css"/>
+
+  <style>
+    body{ background:#f8fafc }
+    input[aria-invalid="true"]{ border-color:#e11d48 } /* rojo si hay error */
+    small#rutMsg{ font-weight: bold; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <article>
+      <h1>Formulario de Registro</h1>
+      <form id="formulario" action="/submit" method="post" novalidate>
+        <!-- Nombre -->
+        <label>
+          Nombre
+          <input id="nombre" name="nombre" type="text" placeholder="Ej: Pepe " required>
+        </label>
+
+        <!-- Correo -->
+        <label>
+          Correo electrónico
+          <input id="email" name="email" type="email" placeholder="tu_correo@ejemplo.com" required>
+        </label>
+
+        <!-- RUT -->
+        <label>
+          RUT (Chile)
+          <input id="rut" name="rut" type="text" placeholder="21123321-1" required>
+          <small>Formato: dígitos + Verificador. El guion se inserta automáticamente.</small>
+          <small id="rutMsg"></small>
+        </label>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </article>
+  </main>
+
+  <script>
+    /* =========================================================
+       FUNCIONES RUT
+       ========================================================= */
+    const limpiarRut = r => (r||"").replace(/[^0-9kK]/g,"").toUpperCase();
+    const calcularDV = c => {
+      let s=0,m=2;
+      for(let i=c.length-1; i>=0; i--){
+        s += Number(c[i])*m;
+        m = m===7?2:m+1;
+      }
+      const d = 11-(s%11);
+      return d===11?"0":d===10?"K":String(d);
+    };
+    const esCuerpoValido = c => {
+      if(!/^\d{7,8}$/.test(c)) return false;
+      if(Number(c)===0) return false;
+      if(/^(\d)\1+$/.test(c)) return false;
+      return true;
+    };
+    const validarRut = r => {
+      if(!/^\d{7,8}-[\dK]$/.test(r)) return false;
+      const [c,dv] = r.split("-");
+      if(!esCuerpoValido(c)) return false;
+      return calcularDV(c)===dv;
+    };
+
+    /* =========================================================
+       AUTOINSERCIÓN DEL GUION + FEEDBACK EN VIVO
+       ========================================================= */
+    const iRut = document.getElementById("rut");
+    const rutMsg = document.getElementById("rutMsg");
+
+    iRut.addEventListener("input", () => {
+      let v = limpiarRut(iRut.value);
+      if(v.length > 1){
+        const cuerpo = v.slice(0, -1);
+        const dv = v.slice(-1);
+        iRut.value = cuerpo + "-" + dv;
+      } else {
+        iRut.value = v;
+      }
+
+      // Validación en vivo
+      if(validarRut(iRut.value)){
+        rutMsg.textContent = "✅ RUT válido";
+        rutMsg.style.color = "green";
+      } else {
+        rutMsg.textContent = "❌ RUT inválido";
+        rutMsg.style.color = "red";
+      }
+    });
+
+    /* =========================================================
+       VALIDACIÓN FORMULARIO
+       ========================================================= */
+    const f = document.getElementById("formulario");
+    const iNombre = document.getElementById("nombre");
+    const iEmail  = document.getElementById("email");
+
+    f.addEventListener("submit", e => {
+      let ok = true;
+
+      [iNombre,iEmail].forEach(inp=>{
+        if(!inp.checkValidity()){
+          inp.setAttribute("aria-invalid","true");
+          ok=false;
+        } else inp.removeAttribute("aria-invalid");
+      });
+
+      if(!validarRut(iRut.value)){
+        iRut.setAttribute("aria-invalid","true");
+        iRut.setCustomValidity("RUT inválido. Verifica el DV y formato.");
+        ok=false;
+      } else {
+        iRut.removeAttribute("aria-invalid");
+        iRut.setCustomValidity("");
+      }
+
+      if(!ok){
+        e.preventDefault();
+        alert("Revisa los campos en rojo. El RUT debe ser real y válido.");
+      }
+    });
+  </script>
+</body>
+</html>

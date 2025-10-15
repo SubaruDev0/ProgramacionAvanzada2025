@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agenda tu hora – Clínica Dental</title>
+  <link rel="stylesheet" href="./styles.css?v=12">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- =========================================================
+       ENCABEZADO
+       ========================================================= -->
+  <header class="header header-rounded">
+    <nav class="nav nav--simple">
+      <div class="title">Clínica Dental</div>
+      <a class="cta-dark" href="index.html">Volver</a>
+    </nav>
+  </header>
+
+  <!-- =========================================================
+       CONTENIDO PRINCIPAL
+       ========================================================= -->
+  <main class="section">
+    <h1 style="text-align:center;margin:0 0 18px">Agenda tu hora</h1>
+    <p style="text-align:center;color:var(--muted);margin:-6px 0 26px">
+      Completa tus datos y elige el tratamiento. Te contactaremos para confirmar.
+    </p>
+
+    <div class="agenda-grid">
+
+      <!-- =========================================================
+           FORMULARIO DE AGENDA
+           ========================================================= -->
+      <form class="form-card" onsubmit="event.preventDefault(); window.location.href='confirmacion.html';">
+
+        <!-- Datos personales -->
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nombre">Nombre y Apellido</label>
+            <input id="nombre" type="text" placeholder="Ej: Ana Pérez" required>
+          </div>
+          <div class="form-field">
+            <label for="rut">RUT / ID</label>
+            <input id="rut" type="text" placeholder="Ej: 12.345.678-9" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" placeholder="+56 9 1234 5678" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Correo</label>
+            <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+        </div>
+
+        <!-- Fecha y método de contacto en la misma fila -->
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fecha">Fecha preferida</label>
+            <input id="fecha" type="date" required>
+          </div>
+          <div class="form-field">
+            <label for="contacto">Método de contacto</label>
+            <select id="contacto" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option>WhatsApp</option>
+              <option>Llamada</option>
+              <option>Correo</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Tratamiento -->
+        <div class="form-field">
+          <label for="tratamiento">Tratamiento</label>
+          <select id="tratamiento" required>
+            <option value="" selected disabled>Selecciona una opción</option>
+            <option>Evaluación inicial</option>
+            <option>Limpieza (Profilaxis)</option>
+            <option>Blanqueamiento dental</option>
+            <option>Tratamiento de caries (Resina)</option>
+            <option>Endodoncia (Conducto)</option>
+            <option>Extracción simple</option>
+            <option>Periodoncia (Limpieza profunda)</option>
+            <option>Ortodoncia – Evaluación</option>
+          </select>
+        </div>
+
+        <!-- Motivo -->
+        <div class="form-field">
+          <label for="motivo">Motivo / Comentarios</label>
+          <textarea id="motivo" rows="4" placeholder="Cuéntanos brevemente tu caso, dolor, tiempo de evolución, etc."></textarea>
+        </div>
+
+        <!-- Consentimiento -->
+        <label class="check">
+          <input type="checkbox" required>
+          Acepto ser contactad@ para confirmar mi hora y recibir información relacionada.
+        </label>
+
+        <!-- Botón enviar -->
+        <button type="submit" class="btn btn-full">Solicitar reserva</button>
+      </form>
+
+      <!-- =========================================================
+           INFO DE TRATAMIENTOS
+           ========================================================= -->
+      <aside class="info">
+        <h3>Tratamientos (guía rápida)</h3>
+
+        <details class="info-card">
+          <summary>Evaluación inicial</summary>
+          <p>Primera consulta para diagnóstico y plan de tratamiento. Incluye revisión clínica y presupuestos.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Limpieza (Profilaxis)</summary>
+          <p>Elimina placa y sarro para prevenir caries y enfermedades de encías. Recomendable cada 6 meses.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Blanqueamiento dental</summary>
+          <p>Aclara el tono de tus dientes de forma segura. Se evalúa previamente la sensibilidad y condición del esmalte.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Tratamiento de caries (Resina)</summary>
+          <p>Restaura el diente afectado por caries con resina estética del color del diente.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Endodoncia (Conducto)</summary>
+          <p>Tratamiento para infecciones o daños en la pulpa dental. Alivia dolor y preserva el diente.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Extracción simple</summary>
+          <p>Retiro de piezas que no pueden recuperarse. Se realiza con anestesia local y cuidados post operatorios.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Periodoncia (Limpieza profunda)</summary>
+          <p>Control de gingivitis/periodontitis. Limpieza subgingival para recuperar salud de encías.</p>
+        </details>
+
+        <details class="info-card">
+          <summary>Ortodoncia – Evaluación</summary>
+          <p>Revisión de alineación y mordida. Define si requieres frenillos u otras alternativas.</p>
+        </details>
+      </aside>
+    </div>
+  </main>
+
+  <!-- =========================================================
+       PIE DE PÁGINA
+       ========================================================= -->
+  <footer>
+    <div class="wrap">© 2025 Clínica Dental</div>
+  </footer>
+
+</body>
+</html>
