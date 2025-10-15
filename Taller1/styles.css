@@ -1,0 +1,432 @@
+/* =========================================================
+   PALETA (Variables de diseño)
+   ========================================================= */
+:root{
+  --primary:#0ea5e9;          /* Azul principal para botones y detalles */
+  --primary-700:#0284c7;      /* Azul más oscuro para hover/acentos */
+  --bg:#f8fafc;               /* Fondo general clarito */
+  --text:#0f172a;             /* Color base del texto (azul grisáceo bien legible) */
+  --muted:#64748b;            /* Texto secundario (descripciones) */
+  --card:#ffffff;             /* Fondo de tarjetas/cajas blancas */
+  --dark:#1f2937;             /* Gris oscuro (botón volver) */
+  --dark-border:#111827;      /* Borde más oscuro para contraste */
+  --shadow:0 10px 20px rgba(2,8,23,.08); /* Sombra suave y limpia */
+}
+*{ box-sizing:border-box }     /* Incluye borde/padding en el cálculo del ancho/alto */
+html{ scroll-behavior:smooth } /* Scroll suave al navegar con anclas */
+body{
+  margin:0;                   /* Quita margen por defecto del body */
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Inter, Arial, sans-serif; /* Fuente del sistema (rápida/legible) */
+  color:var(--text);          /* Texto con el color base */
+  background:var(--bg);       /* Fondo clarito */
+  line-height:1.6;            /* Altura de línea cómoda para leer */
+}
+
+/* =========================================================
+   BARRA ALTA (Contacto y Redes)
+   ========================================================= */
+.topbar{
+  background:#f5f5f5;         /* Franja gris clara superior */
+  color:#333;                  /* Texto oscuro para contraste */
+  font-size:14px;              /* Tamaño pequeño, info secundaria */
+  border-bottom:1px solid #e5e7eb; /* Línea sutil para separar */
+}
+.topbar-content{
+  max-width:1200px;           /* Ancho máximo centrado */
+  margin:0 auto;              /* Centra horizontalmente */
+  padding:6px 16px;           /* Aire interno */
+  display:flex;               /* Coloca elementos en fila */
+  justify-content:space-between; /* Espaciados a los extremos */
+  align-items:center;         /* Centra verticalmente */
+  flex-wrap:wrap;             /* Permite que salte de línea en pantallas chicas */
+}
+.topbar .contacto,
+.topbar .horario{ margin-right:20px; } /* Separación entre textos */
+.topbar .redes a{
+  color:var(--primary);       /* Links con color principal */
+  margin-left:12px;           /* Espacio entre íconos/enlaces */
+  font-size:18px;             /* Un pelín más grande */
+  transition:color .2s;       /* Animación suave de color */
+}
+.topbar .redes a:hover{ color:var(--primary-700) } /* Oscurece al hover */
+
+/* =========================================================
+   BARRA MEDIA (Título + Botón Login/Volver)
+   ========================================================= */
+.header-rounded{ 
+  background:#ffffff;         /* Fondo blanco limpio */
+  border-bottom:1px solid #e5e7eb; /* Separación sutil con el contenido */
+}
+.nav--simple{
+  width:100%;                 /* Ocupa todo el ancho */
+  padding:30px 90px;          /* Altura generosa y espacio lateral */
+  display:grid;               /* Grid: fácil para 2 columnas */
+  grid-template-columns: 1fr auto; /* Col 1 (título) crece, Col 2 (botón) al ancho */
+  align-items:center;         /* Centra verticalmente */
+  background:#bab6b6;         /* Franja gris (puede ser tu “branding”) */
+  border-radius:0;            /* Sin esquinas redondeadas aquí */
+}
+.title{
+  font-size:32px;             /* Título grande y visible */
+  font-weight:1000;           /* Súper bold (si la fuente lo soporta; 900 también vale) */
+  color:var(--text);          /* Color de texto base */
+  letter-spacing:.5px;        /* Ligeramente más espaciadas las letras */
+}
+.cta-dark{
+  text-decoration:none;       /* Sin subrayado en el botón */
+  font-weight:800;            /* Botón con peso potente */
+  padding:14px 28px;          /* Tamaño del botón cómodo */
+  border-radius:12px;         /* Bordes suaves */
+  background:var(--dark);     /* Fondo gris oscuro */
+  color:#fff;                 /* Texto blanco para contraste */
+  border:1px solid var(--dark-border); /* Borde sutil más oscuro */
+  box-shadow:0 8px 18px rgba(0,0,0,.15); /* Sombra para relieve */
+  transition: background .2s ease, filter .2s ease; /* Animación en hover */
+}
+.cta-dark:hover{ 
+  background:#374151;         /* Un poco más oscuro al pasar el mouse */
+  filter:brightness(1.08);    /* Un toque de brillo extra */
+}
+
+/* =========================================================
+   BOTONES (Primario, Contorno, Utilidades)
+   ========================================================= */
+.btn{
+  padding:10px 50px;          /* Botón ancho cómodo (formato “píldora”) */
+  border-radius:999px;        /* Píldora total */
+  text-decoration:none;       /* Sin subrayado (si es <a>) */
+  font-weight:600;            /* Peso medio–alto */
+  border:1px solid var(--primary-700); /* Borde azul oscuro */
+  color:#ffffff;              /* Texto blanco */
+  background:var(--primary);  /* Fondo azul principal */
+  box-shadow: var(--shadow);  /* Sombra consistente con el sistema */
+  display:inline-block;       /* Permite padding/margen correcto */
+  transition:background .2s ease; /* Hover suave del color */
+}
+.btn:hover{ background:var(--primary-700) } /* Se oscurece al hover */
+
+.btn-outline{
+  background:#fff;            /* Botón hueco (fondo blanco) */
+  color:var(--primary-700);   /* Texto en azul oscuro */
+  border:1px solid var(--primary-700); /* Borde visible */
+  border-radius:999px;        /* Píldora */
+  padding:10px 22px;          /* Un poco más compacto que el primario */
+}
+.btn-outline:hover{
+  background:var(--primary-700); /* Al hover se llena */
+  color:#fff;                    /* Texto blanco al hover */
+  border-color:var(--primary-700);
+}
+
+.btn-full{ 
+  width:100%;                 /* Botón de ancho completo (forms) */
+  text-align:center;          /* Centra el texto */
+  margin-top:12px;            /* Respira desde el campo anterior */
+}
+.cta-row{ 
+  display:flex;               /* Fila de botones */
+  gap:12px;                   /* Separación entre botones */
+  margin-top:10px; 
+}
+
+/* Accesibilidad: foco visible (para navegar con teclado) */
+.btn:focus-visible,
+.cta-dark:focus-visible,
+.btn-outline:focus-visible{
+  outline:3px solid rgba(2,132,199,.35); /* Anillo accesible (AA) */
+  outline-offset:2px;                    /* Corre el anillo hacia afuera */
+}
+
+/* =========================================================
+   HERO (Sección inicial)
+   ========================================================= */
+.hero{
+  max-width:1100px;           /* Control del ancho para buena lectura */
+  margin:55px auto;           /* Centrado y separación vertical */
+  padding:0 20px 24px;        /* Aire lateral + abajo */
+  display:grid;               
+  grid-template-columns: 1.2fr 1fr; /* Texto más ancho que la imagen */
+  gap:28px;                   /* Separación entre columnas */
+  align-items:center;         /* Centra contenido verticalmente */
+}
+.hero h1{ 
+  font-size: clamp(28px, 3vw + 8px, 44px); /* Tamaño fluido según pantalla */
+  margin:0 0 10px; 
+}
+.hero p{ color:var(--muted); margin-top:0 } /* Párrafo suave y pegado al título */
+.hero img{ 
+  width:100%;                 /* Imagen adaptable al contenedor */
+  border-radius:20px;         /* Esquinas suaves */
+  box-shadow:var(--shadow);   /* Sombra consistente */
+}
+
+/* =========================================================
+   FRANJA HORARIOS (Barra gris)
+   ========================================================= */
+.horarios{
+  background:#323131;         /* Fondo gris oscuro */
+  color:#fff;                 /* Texto blanco */
+  text-align:center;          /* Centra el contenido */
+  padding:18px 20px;          /* Altura cómoda */
+  font-size:16px;
+  margin-top:20px;            /* Un respiro desde el bloque anterior */
+}
+.horarios p{ margin:0; line-height:1.5; } /* Texto compacto pero legible */
+.horarios strong{ font-weight:700; margin-right:6px; } /* Destaca palabras clave */
+.horarios .dias{ color:#446dbe; font-weight:600; }      /* Resalta días/horarios */
+
+/* =========================================================
+   DESCRIPCIÓN (Bloque bajo el Hero)
+   ========================================================= */
+.descripcion{
+  max-width:900px;            /* Ancho de lectura ideal */
+  margin:20px auto 40px;      /* Centrado + separación arriba/abajo */
+  padding:24px;               /* Aire interno */
+  text-align:center;          /* Texto centrado */
+  font-size:18px;             /* Un pelín más grande para destacar */
+  color:var(--text);          /* Texto base */
+  background:#fff;            /* Caja blanca */
+  border-radius:16px;         /* Bordes suaves */
+  box-shadow:var(--shadow);   /* Sombra del sistema */
+}
+.descripcion span{ 
+  color:var(--primary);       /* Palabras clave en azul */
+  font-weight:700;            /* Más peso para énfasis */
+}
+
+/* =========================================================
+   TARJETAS INFERIORES (3 centradas)
+   ========================================================= */
+.section{
+  max-width:1100px;           /* Control del ancho */
+  margin:40px auto;           /* Centrado + separación vertical */
+  padding:20px;               /* Aire lateral */
+}
+.grid-3{
+  display:grid;               
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap:50px;                   /* Espacio entre tarjetas */
+  max-width:900px;            /* Limita ancho para que no se estiren demasiado */
+  margin:0 auto;              /* Centrado */
+  justify-items:center;       /* Centra tarjetas en su columna */
+}
+.card{
+  background:var(--card);     /* Fondo blanco */
+  border-radius:18px;         /* Bordes suaves */
+  overflow:hidden;            /* Oculta desbordes (para imágenes) */
+  box-shadow:var(--shadow);   /* Sombra */
+  display:flex; flex-direction:column; /* Apila imagen y texto */
+  text-decoration:none; color:inherit; /* Si es link, sin subrayado y hereda color */
+  transition: transform .2s ease, box-shadow .2s ease; /* Hover suave */
+  width:100%; max-width:280px; /* Ancho fijo agradable */
+  will-change: transform, box-shadow; /* Optimiza animación */
+}
+.card:hover{
+  transform: translateY(-4px); /* Pequeño “lift” al hover */
+  box-shadow:0 8px 20px rgba(14,165,233,0.25); /* Sombra más marcada en hover */
+}
+.card img{ width:100%; height:160px; object-fit:cover } /* Imagen recortada sin deformarse */
+.card .content{ padding:16px; text-align:center; }       /* Texto centrado en tarjeta */
+.card h3{ margin:0 0 6px }                               /* Título pegado al contenido */
+.card p{ margin:0; color:var(--muted) }                  /* Descripción con color suave */
+
+/* =========================================================
+   VISÍTANOS (Texto + Mapa)
+   ========================================================= */
+.visit{ 
+  max-width:1200px;           /* Contenedor ancho */
+  margin:0 auto 60px;         /* Centrado + espacio inferior */
+  padding:0 20px;             /* Aire lateral */
+}
+.visit-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 1fr; /* Texto un poco más ancho que el mapa */
+  gap:28px; align-items:start;      /* Separación y alinea al inicio */
+}
+.visit-info h2{
+  margin:20px 0 0;            /* Separa del bloque anterior */
+  font-size: clamp(28px, 2.5vw + 12px, 44px); /* Título fluido */
+  line-height:1.15; color:var(--text);
+}
+.visit-info h2 span{ 
+  color:#76a9fa;              /* Resalta una palabra del título */
+  font-weight:900; 
+}
+.visit-sub{ 
+  margin:0 0 18px;            /* Separación bajo el subtítulo */
+  color:var(--muted); 
+}
+
+/* Lista de datos de contacto (única definición) */
+.visit-list{
+  list-style:none;            /* Quita viñetas */
+  padding:0; margin:0;
+  display:flex; flex-direction:column; gap:14px; /* Lista vertical con separación */
+  justify-content:center;     /* Centra verticalmente dentro del espacio */
+  min-height:300px;           /* Alto mínimo para respirar */
+}
+.visit-list .item{
+  display:flex; gap:12px; align-items:flex-start; /* Ícono + texto alineados */
+  background:#fff; border-radius:14px;
+  padding:14px 16px; box-shadow:var(--shadow);     /* Cajitas blancas con sombra */
+}
+.visit-list .item i{ 
+  font-size:18px; color:var(--primary); margin-top:4px; /* Ícono con color */
+}
+.visit-list .item h4{ 
+  margin:0 0 4px; font-size:16px; 
+}
+.visit-list .item p{ 
+  margin:0; color:var(--muted); 
+}
+
+.visit-map iframe{
+  width:100%; height:420px; border:0;      /* Mapa embebido full ancho */
+  border-radius:16px; box-shadow:var(--shadow); /* Bordes y sombra para que combine */
+}
+
+/* =========================================================
+   LOGIN / REGISTRO (Fondo difuminado + caja)
+   ========================================================= */
+.login-hero{ 
+  position:relative; isolation:isolate; min-height:70vh; /* Base del hero del login */
+}
+.login-hero::before{
+  content:""; position:absolute; inset:0;   /* Capa de fondo difuminada */
+  background-image: var(--login-bg);        /* Imagen de fondo pasada inline en el HTML */
+  background-size:cover; background-position:center; background-repeat:no-repeat;
+  filter: blur(7px); transform: scale(1.08); opacity:.35; z-index:0; /* Blur + leve zoom */
+}
+.login-section{ position:relative; z-index:1; } /* Pone el formulario sobre el blur */
+.login-section h1{ text-align:center; font-size:26px; margin:24px 0 16px; } /* Título */
+.login-box{
+  max-width:360px; margin:0 auto; background:#fff;
+  padding:24px; border-radius:16px; box-shadow:var(--shadow); text-align:left; /* Caja del form */
+}
+.login-box form{ display:flex; flex-direction:column; } /* Inputs uno bajo otro */
+.login-box label{ font-weight:600; margin-top:12px; margin-bottom:4px; } /* Etiquetas claras */
+.login-box input{
+  padding:12px; border:1px solid #e5e7eb; border-radius:10px; margin-bottom:10px; /* Inputs cómodos */
+}
+
+/* =========================================================
+   AGENDA TU HORA (Form + Lateral)
+   ========================================================= */
+.agenda-grid{ display:grid; grid-template-columns: 1.2fr .8fr; gap:26px; } /* Form + info al lado */
+.form-card{
+  background:#fff; padding:22px; border-radius:16px; box-shadow:var(--shadow); /* Caja del formulario */
+}
+.form-row{ display:grid; grid-template-columns: 1fr 1fr; gap:14px; } /* 2 columnas en desktop */
+.form-field{ display:flex; flex-direction:column; } /* Label arriba, input abajo */
+.form-field label{ font-weight:700; margin:8px 0 6px; } /* Etiqueta destacada */
+.form-field input,
+.form-field select,
+.form-field textarea{
+  padding:12px; border:1px solid #e5e7eb; border-radius:10px; outline:none; width:100%; /* Campos uniformes */
+}
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
+  border-color:var(--primary-700);                              /* Borde azul al focus */
+  box-shadow:0 0 0 3px rgba(2,132,199,.15);                     /* Anillo de enfoque accesible */
+}
+.check{ display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--muted); margin:8px 0 6px; } /* Checkbox + texto */
+.check input{ margin-top:3px; } /* Alinea el checkbox con el texto */
+
+.info h3{ margin:0 0 10px; } /* Título del panel lateral */
+.info-card{
+  background:#fff; border-radius:12px; box-shadow:var(--shadow);
+  padding:14px 16px; margin-bottom:12px; /* Tarjetitas informativas */
+}
+.info-card summary{ cursor:pointer; font-weight:800; color:var(--text); } /* <details> con summary clickeable */
+.info-card p{ margin:10px 0 0; color:var(--muted); font-size:14px; }      /* Texto interno suave */
+
+/* =========================================================
+   CONFIRMACIÓN DE SOLICITUD (Tarjeta centrada)
+   ========================================================= */
+.confirmacion-box{
+  max-width:450px;            /* Ancho agradable para modal/tarjeta */
+  margin:200px auto;          /* Centrado con espacio superior/inferior */
+  background:#fff;
+  padding:28px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 8px 30px rgba(0,0,0,.15); /* Sombra más notoria para protagonismo */
+}
+.confirmacion-box h2{
+  font-size:24px; margin:16px 0 10px; font-weight:900; color:var(--text); /* Título fuerte */
+}
+.confirmacion-box p{ color:var(--muted); font-size:16px; margin-bottom:20px; } /* Mensaje */
+.circle-check{
+  width:80px; height:80px; margin:0 auto 16px; border-radius:50%; /* Circulito verde con check */
+  background:#22c55e; color:#fff; display:flex; justify-content:center; align-items:center;
+  font-size:38px; box-shadow:0 0 20px rgba(34,197,94,.4);
+}
+/* Botón centrado dentro de la confirmación */
+.confirmacion-box .btn{
+  display:block; width:220px; margin:0 auto; padding:14px 0;
+  font-size:18px; border-radius:999px; text-align:center;
+}
+
+/* =========================================================
+   ESPECIALISTAS (Grid + Tarjetas)
+   ========================================================= */
+.experts{ max-width:1100px; margin:0 auto; padding:0 10px; } /* Contenedor general */
+.experts-grid{
+  display:grid; grid-template-columns: repeat(2, minmax(0, 340px)); /* 2 columnas fijas */
+  gap:24px; justify-content:center; /* Centra el grid */
+}
+.expert-card{
+  background:#fff; border-radius:16px; box-shadow:var(--shadow);
+  padding:16px; text-align:center; transition:transform .2s ease; /* Tarjeta de especialista */
+}
+.expert-card:hover{ transform: translateY(-4px); } /* Levanta un poquito */
+.expert-card .photo img{
+  width:100%; height:320px; object-fit:cover; border-radius:12px; /* Foto recortada */
+}
+.expert-card h3{ margin:12px 0 4px; font-size:18px; color:var(--text); } /* Nombre */
+.expert-card .area{ margin:0 0 6px; font-weight:800; color:var(--primary); letter-spacing:.4px; } /* Especialidad */
+.expert-card .bio{ margin:0; color:var(--muted); font-size:14px; } /* Mini bio */
+
+/* =========================================================
+   PREGUNTAS (Antes FAQ)
+   ========================================================= */
+.preguntas-box{
+  max-width:800px; margin:0 auto; /* Contenedor centrado */
+  display:flex; flex-direction:column; gap:20px; /* Lista vertical con espacio */
+}
+.pregunta-item{
+  background:#fff; border-radius:14px; box-shadow:var(--shadow);
+  padding:20px; text-align:center; /* Tarjetitas con pregunta/respuesta cortas */
+}
+.pregunta-item h3{ margin:0 0 8px; font-size:18px; color:var(--text); } /* Título pregunta */
+.pregunta-item p{ margin:0; font-size:15px; color:var(--muted); }        /* Respuesta/explicación */
+
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
+footer{ border-top:1px solid #ababab; background:#fff; } /* Línea arriba y fondo blanco */
+footer .wrap{ 
+  max-width:1100px; margin:0 auto; padding:18px 20px; 
+  color:var(--muted); font-size:14px 
+}
+
+/* =========================================================
+   RESPONSIVE (Ajustes por tamaños)
+   ========================================================= */
+@media (max-width: 960px){
+  .hero{ grid-template-columns: 1fr; }      /* Hero pasa a 1 columna */
+  .title{ font-size:26px; }                 /* Título más chico */
+  .visit-grid{ grid-template-columns: 1fr; }/* “Visítanos” apilado */
+  .visit-map iframe{ height:360px; }        /* Mapa más bajo en mobile */
+  .agenda-grid{ grid-template-columns: 1fr; }/* Form agenda apilado */
+}
+@media (max-width: 768px){
+  .grid-3{ grid-template-columns: 1fr; }    /* Tarjetas: 1 por fila */
+}
+@media (max-width: 560px){
+  .nav--simple{ padding:20px; }             /* Barra superior más compacta */
+  .title{ font-size:22px; }                 /* Título más pequeño */
+  .login-box{ max-width:92%; }              /* Caja de login más adaptable */
+  .card img{ height:140px; }                /* Imagen de tarjeta más baja */
+}
