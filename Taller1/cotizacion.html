@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cotización – Clínica Dental</title>
+
+  <!-- Usa el MISMO path que en index.html -->
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- Encabezado simple -->
+  <header class="header header-rounded">
+    <nav class="nav nav--simple">
+      <div class="title">Clínica Dental</div>
+      <a class="cta-dark" href="./index.html">Volver</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="section">
+    <h1 style="text-align:center;margin:0 0 18px">Solicitud de cotización</h1>
+    <p style="text-align:center;color:var(--muted);margin:-6px 0 26px">
+      Completa tu información y cuéntanos tu caso. Te enviaremos una estimación referencial.
+    </p>
+
+    <div class="agenda-grid">
+      <form class="form-card" onsubmit="event.preventDefault(); window.location.href='confirmacion.html';">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="nombre">Nombre y Apellido</label>
+            <input id="nombre" type="text" placeholder="Ej: Ana Pérez" required>
+          </div>
+          <div class="form-field">
+            <label for="rut">RUT / ID</label>
+            <input id="rut" type="text" placeholder="Ej: 12.345.678-9" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="telefono">Teléfono</label>
+            <input id="telefono" type="tel" placeholder="+56 9 1234 5678" required>
+          </div>
+          <div class="form-field">
+            <label for="email">Correo</label>
+            <input id="email" type="email" placeholder="tucorreo@ejemplo.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="tratamiento">Tratamiento de interés</label>
+            <select id="tratamiento" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option>Evaluación inicial</option>
+              <option>Limpieza (Profilaxis)</option>
+              <option>Blanqueamiento dental</option>
+              <option>Tratamiento de caries (Resina)</option>
+              <option>Endodoncia (Conducto)</option>
+              <option>Extracción simple</option>
+              <option>Periodoncia (Limpieza profunda)</option>
+              <option>Ortodoncia – Evaluación</option>
+              <option>Prótesis/Implantes</option>
+              <option>Otro (especificar abajo)</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contacto">Método de contacto</label>
+            <select id="contacto" required>
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option>WhatsApp</option>
+              <option>Llamada</option>
+              <option>Correo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="detalle">Describe tu caso</label>
+          <textarea id="detalle" rows="5" placeholder="Cuéntanos tu motivo, piezas comprometidas, tiempo de evolución, sensibilidad, etc."></textarea>
+        </div>
+
+        <label class="check">
+          <input type="checkbox" required>
+          Acepto ser contactad@ para recibir mi cotización y más información relacionada.
+        </label>
+
+        <button type="submit" class="btn btn-full">Enviar solicitud</button>
+      </form>
+
+      <aside class="info">
+        <h3>Consejos para una cotización precisa</h3>
+        <details class="info-card">
+          <summary> Si desea adjuntar un archivo</summary>
+          <p>Si tiene algun documento que sea importante mencionelo en la cotizacion.</p>
+        </details>
+        <details class="info-card">
+          <summary>Indica síntomas</summary>
+          <p>Dolor, sangrado, movilidad, sensibilidad al frío/calor ayudan a orientar el tratamiento.</p>
+        </details>
+        <details class="info-card">
+          <summary>Menciona tratamientos previos</summary>
+          <p>Endodoncias, resinas, coronas o extracciones previas pueden cambiar el plan de tratamiento.</p>
+        </details>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2025 Clínica Dental</div>
+  </footer>
+
+</body>
+</html>
