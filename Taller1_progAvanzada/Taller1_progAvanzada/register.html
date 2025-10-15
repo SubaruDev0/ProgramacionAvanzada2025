@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script
-      src="https://kit.fontawesome.com/7110b137dd.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/7110b137dd.js" crossorigin="anonymous"></script>
     <title>Registro - Clínica Dental</title>
     <link rel="stylesheet" href="css/registro.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-
     <!--Encabezado-->
-    <div class="encabezado" id = "encabezado">
+    <div class="encabezado" id="encabezado">
         <!--Imagen del encabezado-->
         <div class="logo">
             <img src="img/logo.png" alt="logo">
@@ -28,16 +24,14 @@
                 <li><a href="especialidades.html">Especialidades</a></li>
                 <li><a href="faq.html">FAQ</a></li>
                 <li><a href="nosotros.html">Nosotros</a></li>
-               <!-- <li><a href="enc_menu">Contacto</a></li> -->
                 <li><a href="equipo.html">Equipo</a></li>
                 <li><a href="login.html">Login</a></li>
             </ul>
         </nav>
-        <div class="reserva"> <!--Reserva que va a parte-->
-            <a href="enc_menu">Reservar cita</a>
+        <div class="reserva">
+            <a href="reservas.html">Reservar cita</a>
         </div>
     </div>
-
 
     <div class="login-container">
         <div class="login-header">
@@ -103,7 +97,7 @@
             </div>
         </form>
         
-        <!-- Mensaje de confirmación (oculto inicialmente) -->
+        <!-- Mensaje de confirmación -->
         <div id="confirmationMessage" class="confirmation-message" style="display: none;">
             <div class="message-icon">✓</div>
             <h3>¡Registro exitoso!</h3>
@@ -112,58 +106,43 @@
         </div>
     </div>
 
-    <!-- footer-->
-        <footer class="footer">
-            <div class="footer-container">
-                <!-- Logo / nombre -->
-                <div class="footer-logo">
-                    <img src="img/logo.png" alt="Logo Clínica" />
-                </div>
-
-                <!-- Información de contacto -->
-                <div class="footer-info">
-                    <h4>Contacto</h4>
-                    <p>Teléfono: +56 9 1234 5678</p>
-                    <p>Email: contacto@clinicadental.cl</p>
-                    <p>Dirección: Calle Ejemplo 123, Coronel, Chile</p>
-                </div>
-
-                <!-- Enlaces rápidos -->
-                <div class="footer-links">
-                    <h4>Enlaces</h4>
-                    <ul>
-                        <li><a href="especialidades.html">Especialidades</a></li>
-                        <li><a href="equipo.html">Equipo</a></li>
-                        <li><a href="register.html">registro</a></li>
-                    </ul>
-                </div>
-
-                <!-- Redes sociales -->
-                <div class="footer-social">
-          <h4>Síguenos</h4>
-          <div class="social-icons">
-            <a href="#" aria-label="Facebook"
-              ><i class="fa-brands fa-facebook"></i
-            ></a>
-            <a href="#" aria-label="Instagram"
-              ><i class="fa-brands fa-instagram"></i
-            ></a>
-            <a href="#" aria-label="Twitter"
-              ><i class="fa-brands fa-twitter"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2025 Clínica Dental. Todos los derechos reservados.</p>
-      </div>
-    </footer>
-
-            <div class="footer-bottom">
-                <p>© 2025 Clínica Dental. Todos los derechos reservados.</p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="img/logo.png" alt="Logo Clínica" />
             </div>
-        </footer>
+
+            <div class="footer-info">
+                <h4>Contacto</h4>
+                <p>Teléfono: +56 9 1234 5678</p>
+                <p>Email: contacto@clinicadental.cl</p>
+                <p>Dirección: Calle Ejemplo 123, Coronel, Chile</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Enlaces</h4>
+                <ul>
+                    <li><a href="especialidades.html">Especialidades</a></li>
+                    <li><a href="equipo.html">Equipo</a></li>
+                    <li><a href="register.html">Registro</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Clínica Dental. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script>
         // Validación de contraseñas coincidentes
@@ -191,7 +170,6 @@
         document.getElementById('registerForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Validación final antes de enviar
             if (password.value !== confirmPassword.value) {
                 alert('Las contraseñas no coinciden. Por favor, verifica.');
                 return;
@@ -202,7 +180,6 @@
                 return;
             }
             
-            // Simular envío del formulario
             document.getElementById('registerForm').style.display = 'none';
             document.getElementById('confirmationMessage').style.display = 'block';
         });

@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* ===== RESET Y ESTILOS BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #f0f7ff 0%, #e6f0ff 100%);
+    min-height: 100vh;
+    padding-top: 90px;
+    color: #333;
+}
+
+/* ===== HEADER (IGUAL QUE LOGIN) ===== */
+.encabezado {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    height: 90px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.08);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all .3s ease;
+}
+
+.logo img { 
+    height: 60px; 
+    width: auto; 
+    transition: height .28s ease; 
+}
+
+/* Menú */
+.menu ul {
+    display: flex;
+    gap: 1.6rem;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: background .18s ease, color .18s ease, transform .12s ease;
+}
+
+.menu ul li a:hover {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Botón reserva */
+.reserva a {
+    display: inline-block;
+    font-weight: 700;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 9px;
+    text-decoration: none;
+    transition: all .2s ease;
+    background: #1a73e8;
+}
+
+.reserva a:hover {
+    background: #0d47a1;
+}
+
+/* ===== CONTENEDOR LOGIN ===== */
+.login-container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+    margin: 40px auto;
+}
+
+.login-header {
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+.login-header .logo img {
+    max-width: 120px;
+    margin-bottom: 15px;
+}
+
+.login-header h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.login-header p {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* ===== FORMULARIO ===== */
+.login-form {
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #1a73e8;
+    box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+    font-size: 13px;
+}
+
+/* ===== BOTÓN ===== */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.3);
+}
+
+/* ===== ENLACE VOLVER ===== */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-link a {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.register-link a:hover {
+    color: #0d47a1;
+    text-decoration: underline;
+}
+
+/* ===== MENSAJE DE CONFIRMACIÓN ===== */
+.confirmation-message {
+    padding: 30px;
+    text-align: center;
+}
+
+.message-icon {
+    font-size: 50px;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.confirmation-message h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.confirmation-message p {
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .encabezado {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 1rem;
+        gap: 10px;
+    }
+
+    .menu ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .reserva a {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    
+    .login-container {
+        margin: 20px;
+        max-width: none;
+    }
+}

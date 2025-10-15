@@ -233,3 +233,240 @@ body {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
 }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .menu ul {
+    gap: 1.2rem;
+  }
+
+  .menu ul li a {
+    font-size: 0.95rem;
+    padding: 6px 8px;
+  }
+
+  .esp-imagen {
+    flex: 0 0 280px;
+    height: 160px;
+  }
+
+  .esp-texto h3 {
+    font-size: 1.15rem;
+  }
+
+  .esp-texto p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .encabezado {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .logo img {
+    height: 50px;
+  }
+
+  .encabezado.scroll {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .encabezado.scroll .logo img {
+    height: 45px;
+  }
+
+  .menu ul {
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu ul li a {
+    font-size: 0.85rem;
+    padding: 6px 8px;
+  }
+
+  .reserva {
+    text-align: center;
+  }
+
+  .reserva a {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Especialidades */
+  .especialidades-detalle {
+    padding: 2rem 1rem;
+  }
+
+  .seccion-titulo {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  .especialidad-item {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .esp-texto {
+    flex: 1 1 100%;
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .esp-texto h3 {
+    font-size: 1.1rem;
+  }
+
+  .esp-texto p {
+    font-size: 0.9rem;
+  }
+
+  .esp-imagen {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 200px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 2rem 1rem 1rem 1rem;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
+  .footer-logo img {
+    width: 120px;
+    margin: 0 auto;
+  }
+
+  .footer-social .social-icons {
+    justify-content: center;
+  }
+
+  .footer-info h4,
+  .footer-links h4,
+  .footer-social h4 {
+    font-size: 1rem;
+  }
+
+  .footer-info p,
+  .footer-links ul li,
+  .footer-social .social-icons a {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 50px;
+  }
+
+  .encabezado {
+    padding: 0.8rem;
+    gap: 0.8rem;
+  }
+
+  .logo img {
+    height: 45px;
+  }
+
+  .menu ul {
+    gap: 0.5rem;
+  }
+
+  .menu ul li a {
+    font-size: 0.75rem;
+    padding: 5px 6px;
+  }
+
+  .reserva a {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  /* Especialidades */
+  .especialidades-detalle {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .especialidades-detalle .container {
+    padding: 0 0.5rem;
+  }
+
+  .seccion-titulo {
+    font-size: 1.4rem;
+  }
+
+  .especialidad-item {
+    padding: 0.9rem;
+    margin-bottom: 1rem;
+    gap: 0.8rem;
+  }
+
+  .esp-texto h3 {
+    font-size: 1rem;
+  }
+
+  .esp-texto p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .esp-imagen {
+    height: 160px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 1.5rem 0.8rem 0.8rem 0.8rem;
+  }
+
+  .footer-logo img {
+    width: 100px;
+  }
+
+  .footer-info h4,
+  .footer-links h4,
+  .footer-social h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-info p,
+  .footer-links ul li,
+  .footer-social .social-icons a {
+    font-size: 0.85rem;
+  }
+
+  .footer-social .social-icons a {
+    font-size: 1.3rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+    margin-top: 1.5rem;
+  }
+}
