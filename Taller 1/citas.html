@@ -6,7 +6,6 @@
   <title>Agendar Cita - Clínica Dental Sonrisa Familiar</title>
   <link rel="stylesheet" href="estilo.css">
   <style>
-    /* Mensajes flotantes */
     .mensaje {
       position: fixed;
       top: 20px;
@@ -84,7 +83,6 @@
     </div>
   </main>
 
-  <!-- Mensaje flotante -->
   <div id="mensaje" class="mensaje"></div>
 
   <script>
@@ -92,7 +90,6 @@
     const mensajeDiv = document.getElementById('mensaje');
     const form = document.getElementById('formCita');
 
-    // Evitar fechas pasadas
     (function setMinDate() {
       const hoy = new Date();
       const yyyy = hoy.getFullYear();
@@ -102,7 +99,6 @@
       fechaInput.setAttribute('min', fechaMinima);
     })();
 
-    // Mostrar mensajes flotantes
     function mostrarMensaje(texto, tipo = "exito") {
       mensajeDiv.textContent = texto;
       mensajeDiv.className = `mensaje ${tipo}`;
@@ -113,17 +109,13 @@
       }, 3000);
     }
 
-    // Convierte 'YYYY-MM-DD' a Date local sin desplazamiento UTC
     function fechaStringALocalDate(fechaStr) {
-      // fechaStr formato: 'YYYY-MM-DD'
       const parts = fechaStr.split('-').map(Number);
       if (parts.length !== 3) return null;
       const [y, m, d] = parts;
-      // new Date(year, monthIndex, day) -> mes indexado desde 0
       return new Date(y, m - 1, d);
     }
 
-    // Validar domingos correctamente (usando fecha construida localmente)
     fechaInput.addEventListener('input', () => {
       const val = fechaInput.value;
       if (!val) return;
@@ -136,11 +128,9 @@
       }
     });
 
-    // Manejar envío del formulario
     form.addEventListener('submit', (event) => {
       event.preventDefault();
 
-      // Validaciones básicas
       if (!fechaInput.value) {
         mostrarMensaje("⚠️ Por favor selecciona una fecha válida.", "error");
         return;
@@ -150,16 +140,13 @@
         mostrarMensaje("⚠️ Fecha inválida.", "error");
         return;
       }
-      // Re-check domingo a la hora de enviar (defensa extra)
       if (fechaSeleccionada.getDay() === 0) {
         mostrarMensaje("🚫 No se pueden agendar citas los domingos.", "error");
         return;
       }
 
-      // Si todo ok => mostrar éxito
       mostrarMensaje("✅ Cita agendada con éxito.", "exito");
 
-      // Limpiar formulario después de 1.5s para que user vea el resumen si quiere
       setTimeout(() => {
         form.reset();
       }, 1500);
